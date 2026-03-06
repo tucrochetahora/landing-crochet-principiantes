@@ -39,6 +39,34 @@
             line-height: 1.2;
         }
 
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            text-decoration: none;
+            font-family: var(--font-heading);
+            font-size: 1.25rem;
+            font-weight: 700;
+            padding: 1.25rem 3rem;
+            border-radius: 50px;
+            box-shadow: 0 10px 20px rgba(224, 122, 95, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+        
+        .cta-btn:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px rgba(224, 122, 95, 0.4);
+        }
+
         /* Hero Section */
         .hero {
             background: linear-gradient(135deg, #fdfbf7 0%, #f4eee0 100%);
@@ -83,159 +111,207 @@
             color: #555;
         }
 
-        .cta-btn {
-            display: inline-block;
-            background-color: var(--primary);
-            color: white;
-            text-decoration: none;
-            font-family: var(--font-heading);
-            font-size: 1.25rem;
-            font-weight: 700;
-            padding: 1.25rem 3rem;
-            border-radius: 50px;
-            box-shadow: 0 10px 20px rgba(224, 122, 95, 0.3);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .cta-btn:hover {
-            background-color: var(--primary-hover);
-            transform: translateY(-3px);
-            box-shadow: 0 15px 25px rgba(224, 122, 95, 0.4);
-        }
-
-        /* Problem Section */
-        .problem {
-            padding: 6rem 2rem;
-            background-color: white;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .problem-container {
-            max-width: 800px;
-            background-color: #fff9f9;
-            border-left: 6px solid #d9534f;
-            padding: 3rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease;
-        }
-
-        .problem-container:hover {
-            transform: translateY(-5px);
-        }
-
-        .problem h3 {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            color: #d9534f;
-        }
-
-        .problem p {
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-            color: #444;
-        }
-
-        /* Solution Section */
-        .solution {
-            padding: 6rem 2rem;
-            background-color: var(--secondary);
-            color: white;
+        /* Agitation Section */
+        .agitation {
+            padding: 5rem 2rem;
+            background-color: var(--bg-color);
             text-align: center;
-            position: relative;
         }
-        
-        .solution h3 {
-            font-size: 3rem;
-            color: white;
-            margin-bottom: 2rem;
+
+        .agitation p {
+            font-size: 1.35rem;
+            color: #444;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+            font-weight: 500;
+        }
+
+        /* Cure Section */
+        .cure {
+            padding: 5rem 2rem;
+            background-color: white;
+            text-align: center;
+        }
+
+        .cure h2 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 3rem;
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
         }
 
-        .solution p {
-            font-size: 1.25rem;
-            max-width: 700px;
-            margin: 0 auto 1.5rem;
-            opacity: 0.95;
-            line-height: 1.8;
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 4px solid var(--secondary);
+            background-color: #000;
         }
 
-        /* The Offer */
-        .offer {
-            padding: 5rem 2rem 8rem;
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Fascinations Section */
+        .fascinations {
+            padding: 5rem 2rem;
+            background-color: var(--secondary);
+            color: white;
+        }
+
+        .fascinations h3 {
+            text-align: center;
+            font-size: 2.2rem;
+            color: white;
+            margin-bottom: 3rem;
+        }
+
+        .fascination-list {
+            list-style: none;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .fascination-list li {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .fascination-list li:hover {
+            transform: translateX(10px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .fascination-list .icon {
+            font-size: 1.5rem;
+            line-height: 1.2;
+        }
+        
+        .fascination-list p { margin: 0; }
+
+        /* Bonuses Section */
+        .bonuses {
+            padding: 6rem 2rem;
+            background-color: #faf7f2;
+            text-align: center;
+        }
+
+        .crosshead {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .bonus-text {
+            font-size: 1.25rem;
+            color: #555;
+            margin-bottom: 3rem;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            border: 3px solid white;
+            background-color: #ddd;
+        }
+
+        /* Offer Close Section */
+        .offer-close {
+            padding: 4rem 2rem 6rem;
             background-color: var(--bg-color);
+            display: flex;
+            justify-content: center;
         }
 
         .offer-card {
-            max-width: 900px;
-            margin: -6rem auto 0;
             background: white;
+            padding: 4rem;
             border-radius: 20px;
             box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-            padding: 4rem;
-            position: relative;
             border: 2px solid var(--accent);
             text-align: center;
-            z-index: 10;
-        }
-
-        .price-tag {
-            background-color: var(--accent);
-            color: var(--text-color);
-            position: absolute;
-            top: -25px;
-            right: 40px;
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            font-family: var(--font-heading);
-            font-weight: 800;
-            font-size: 1.5rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .offer-features {
-            list-style: none;
-            margin: 3rem auto;
-            text-align: left;
-            display: inline-block;
             max-width: 600px;
+            width: 100%;
         }
 
-        .offer-features li {
-            font-size: 1.15rem;
-            margin-bottom: 1.2rem;
+        .offer-card h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .price-display {
             display: flex;
+            justify-content: center;
             align-items: flex-start;
+            color: var(--text-color);
+            margin: 2rem 0;
         }
 
-        .offer-features li::before {
-            content: '✓';
-            color: var(--primary);
-            font-weight: bold;
-            font-size: 1.5rem;
-            margin-right: 15px;
-            line-height: 1.2;
+        .price-display .currency {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-top: 0.5rem;
         }
 
-        .bonus {
-            background-color: #fcf6eb;
-            padding: 1.5rem;
-            border-radius: 10px;
-            border-left: 5px solid var(--primary);
-            margin-top: 1.5rem;
+        .price-display .amount {
+            font-size: 5rem;
+            font-weight: 800;
+            line-height: 1;
+        }
+
+        .price-display .cents {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-top: 0.5rem;
+        }
+
+        .price-display .currency-code {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-top: 1rem;
+            margin-left: 0.5rem;
+            color: #888;
+        }
+
+        .offer-card p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
         }
         
-        .bonus strong {
-            color: var(--primary);
-            font-size: 1.25rem;
-        }
-
         .guarantee {
             margin-top: 1.5rem;
             font-size: 0.95rem;
@@ -245,6 +321,12 @@
             justify-content: center;
             gap: 8px;
             font-weight: 500;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 10px 20px rgba(224, 122, 95, 0.3); }
+            50% { transform: scale(1.03); box-shadow: 0 15px 30px rgba(224, 122, 95, 0.5); }
+            100% { transform: scale(1); box-shadow: 0 10px 20px rgba(224, 122, 95, 0.3); }
         }
 
         /* Footer */
@@ -261,63 +343,104 @@
             .hero { padding: 4rem 1.5rem; }
             .hero h1 { font-size: 2.2rem; }
             .hero h2 { font-size: 1.1rem; }
-            .problem-container { padding: 2rem; }
-            .solution h3 { font-size: 2rem; }
-            .offer-card { padding: 2.5rem 1.5rem; margin-top: -3rem; }
-            .price-tag { right: 50%; transform: translateX(50%); top: -20px; font-size: 1.2rem; padding: 0.8rem 1.5rem; }
-            .offer-features li { font-size: 1rem; }
+            .agitation p { font-size: 1.15rem; }
+            .cure h2 { font-size: 1.5rem; }
+            .fascinations h3 { font-size: 1.8rem; }
+            .fascination-list li { font-size: 1rem; flex-direction: column; align-items: center; text-align: center; }
+            .crosshead { font-size: 2rem; }
+            .offer-card { padding: 2.5rem 1.5rem; }
+            .price-display .amount { font-size: 4rem; }
+            .cta-btn { font-size: 1.1rem; padding: 1rem 1.5rem; width: 100%; display: block; }
         }
     </style>
 </head>
 <body>
 
+    <!-- HERO SECTION -->
     <section class="hero">
         <span class="hero-label">Ideal Para Principiantes</span>
         <h1>¿Frustrada Porque Tus Tejidos Nunca Quedan Como En La Foto y <span>No Entiendes Los Patrones?</span></h1>
         <h2>Descubre cómo dominar los puntos básicos del crochet y tener 100 proyectos listos para tejer, 100% en español, incluso si estás empezando desde cero.</h2>
-        <a href="#comprar" class="cta-btn">¡Sí, Quiero Aprender a Tejer Ahora!</a>
     </section>
 
-    <section class="problem">
-        <div class="problem-container">
-            <h3>El Problema Que Te Tiene Estancada...</h3>
-            <p>Te sientas con tu aguja y estambre con toda la ilusión del mundo, lista para relajarte y crear algo hermoso. Pero rápidamente te encuentras con un gran muro...</p>
-            <p><strong>Instrucciones que parecen otro idioma, tutoriales en video que van demasiado rápido, y una falta total de patrones bonitos explicados en español.</strong></p>
-            <p>El resultado es frustrante: Proyectos a medias, nudos imposibles de deshacer, hilo desperdiciado y esa molesta sensación de que el crochet "es muy difícil para ti".</p>
+    <!-- AGITACIÓN -->
+    <section class="agitation">
+        <div class="container">
+            <p>Imagina esto: pasas horas intentando descifrar un patrón de Pinterest que está en inglés o en ruso. Tejes, te equivocas y destejes hasta que te duelen las manos. Al final, ese amigurumi que se veía hermoso en la foto te queda deforme o con agujeros. Terminas frustrada, pensando que el crochet no es para ti. Pero la verdad es otra: no eres tú. Es que nadie te ha enseñado el por qué de cada punto.</p>
         </div>
     </section>
 
-    <section class="solution">
-        <h3>Tu Futuro Como Tejedora Experta</h3>
-        <p>Imagina poder tomar <strong>cualquier</strong> patrón, leerlo y entenderlo a la perfección a la primera.</p>
-        <p>Imagina tejer con total confianza, reduciendo tu estrés y viendo cómo tu proyecto toma forma rápidamente, quedando <em>exactamente igual (o más hermoso)</em> que en las fotos originales.</p>
+    <!-- CURA Y VIDEO -->
+    <section class="cure">
+        <div class="container">
+            <h2>Elimina las conjeturas y la frustración. Con nuestro Libro Digital de Crochet para Principiantes, vas a pasar de no saber agarrar la aguja a crear proyectos de los que te sientas orgullosa.</h2>
+            
+            <div class="video-wrapper">
+                <!-- Se ha usado un iframe estándar de YouTube como placeholder responsivo -->
+                <iframe width="560" height="315" src="[PON AQUÍ TU ENLACE DE YOUTUBE]" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+
+            <a href="#comprar" class="cta-btn pulse">¡Sí, Quiero Mi Libro y Mis 100 Patrones por $9.99!</a>
+        </div>
     </section>
 
-    <section class="offer" id="comprar">
-        <div class="offer-card">
-            <div class="price-tag">Sólo $9.99 USD</div>
-            <h3 style="font-size: 2.2rem; margin-bottom: 1rem;">La Solución Definitiva de @tucrochetahora</h3>
-            <p style="font-size: 1.15rem; color: #666; max-width: 600px; margin: 0 auto;">El "Puente" exacto entre ser una principiante frustrada y tejer con confianza todos los días.</p>
-            
-            <ul class="offer-features">
-                <li><strong>Libros Digitales Paso a Paso:</strong> Domina desde los puntos básicos hasta técnicas avanzadas sin complicaciones.</li>
-                <li><strong>Imágenes Ilustrativas:</strong> Cientos de fotos claras de alta calidad mostrando exactamente dónde va la aguja.</li>
-                <li><strong>Explicaciones 100% en Español:</strong> Adiós a la confusión de las traducciones abstractas o términos extraños en inglés.</li>
-                <li class="bonus">
-                    <strong>🎁 BONO EXCLUSIVO:</strong> Una biblioteca de <strong>100 Patrones Premium en Español</strong> para que nunca te falte inspiración. ¡Proyectos listos para ti de inmediato!
+    <!-- FASCINACIONES -->
+    <section class="fascinations">
+        <div class="container">
+            <h3>Lo que descubrirás en el interior:</h3>
+            <ul class="fascination-list">
+                <li>
+                    <span class="icon">✨</span>
+                    <p><strong>El secreto para leer patrones gráficos fácilmente</strong> sin sentir que estás descifrando otro idioma.</p>
+                </li>
+                <li>
+                    <span class="icon">✨</span>
+                    <p><strong>La regla de oro de la tensión:</strong> cómo evitar para siempre los bordes irregulares.</p>
+                </li>
+                <li>
+                    <span class="icon">✨</span>
+                    <p><strong>El punto clave que transforma cualquier hilo</strong> en un acabado profesional.</p>
                 </li>
             </ul>
-
-            <div style="margin-top: 2.5rem;">
-                <a href="#" class="cta-btn" style="width: 100%; max-width: 350px; font-size: 1.3rem;">Comprar Ahora</a>
-                <p class="guarantee">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-                    Pago 100% Seguro. Acceso Inmediato.
-                </p>
-            </div>
         </div>
     </section>
 
+    <!-- BONO Y GALERÍA -->
+    <section class="bonuses">
+        <div class="container">
+            <h3 class="crosshead">Nunca Más Te Quedes Sin Ideas: Tu Biblioteca Privada de 100 Patrones</h3>
+            <p class="bonus-text">Como regalo especial hoy, te llevas 100 patrones probados, modernos y 100% en español.</p>
+            
+            <div class="gallery">
+                <img src="[ENLACE_IMAGEN_1]" alt="Galería Patrones Crochet 1" class="gallery-img">
+                <img src="[ENLACE_IMAGEN_2]" alt="Galería Patrones Crochet 2" class="gallery-img">
+                <img src="[ENLACE_IMAGEN_3]" alt="Galería Patrones Crochet 3" class="gallery-img">
+            </div>
+
+            <a href="#comprar" class="cta-btn">¡Sí, Quiero Mi Libro y Mis 100 Patrones por $9.99!</a>
+        </div>
+    </section>
+
+    <!-- CIERRE DE OFERTA -->
+    <section class="offer-close" id="comprar">
+        <div class="offer-card">
+            <h3>Empieza hoy mismo</h3>
+            <div class="price-display">
+                <span class="currency">$</span>
+                <span class="amount">9</span>
+                <span class="cents">.99</span>
+                <span class="currency-code">USD</span>
+            </div>
+            <p>Acceso inmediato y de por vida a los libros digitales y a tu biblioteca de 100 patrones extra.</p>
+            <a href="#" class="cta-btn pulse" style="width: 100%; margin-top: 1rem;">¡Sí, Quiero Mi Libro y Mis 100 Patrones por $9.99!</a>
+            <p class="guarantee">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry=\"2\"></rect><path d=\"M7 11V7a5 5 0 0 1 10 0v4\"></path></svg>
+                Pago 100% Seguro. Acceso Inmediato.
+            </p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
     <footer>
         <p>&copy; 2026 @tucrochetahora. Todos los derechos reservados. | Landing Page de Alta Conversión</p>
     </footer>
