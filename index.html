@@ -9,14 +9,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #f8fafc; /* Limpio, ligero azulado/gris */
-            --text-color: #1e293b; /* Texto oscuro, casi negro */
-            --heading-color: #1e3a8a; /* Azul confianza */
-            --primary: #059669; /* Verde éxito */
+            --bg-color: #f8fafc;
+            --text-color: #1e293b;
+            --heading-color: #1e3a8a;
+            --primary: #059669;
             --primary-hover: #047857;
-            --secondary: #3b82f6; /* Azul acento */
-            --accent: #f59e0b; /* Naranja/amarillo vibrante */
-            --danger: #ef4444; /* Rojo urgencia */
+            --secondary: #3b82f6;
+            --accent: #f59e0b;
+            --danger: #ef4444;
             --font-heading: 'Outfit', sans-serif;
             --font-body: 'Inter', sans-serif;
             --timer-bg: #fee2e2;
@@ -35,7 +35,7 @@
             color: var(--text-color);
             line-height: 1.6;
             overflow-x: hidden;
-            padding-top: 50px; /* Espacio para el sticky timer */
+            padding-top: 50px;
         }
 
         h1, h2, h3, h4 {
@@ -218,7 +218,7 @@
             font-size: 1.35rem;
             color: #334155;
             max-width: 800px;
-            margin: 0 auto;
+            margin: 0 auto 1.5rem;
             line-height: 1.8;
             font-weight: 500;
             border-left: 5px solid var(--danger);
@@ -238,15 +238,23 @@
 
         .cure h2 {
             font-size: 2.2rem;
-            margin-bottom: 3rem;
+            margin-bottom: 1.5rem;
             max-width: 850px;
             margin-left: auto;
             margin-right: auto;
         }
 
+        .cure p {
+            font-size: 1.25rem;
+            color: #475569;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            line-height: 1.8;
+        }
+
         .video-wrapper {
             position: relative;
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            padding-bottom: 56.25%;
             height: 0;
             max-width: 800px;
             margin: 0 auto 2rem;
@@ -263,6 +271,54 @@
             left: 0;
             width: 100%;
             height: 100%;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 5rem 2rem;
+            background-color: #fffbeb; /* Amarillo pastel suave */
+            text-align: center;
+        }
+
+        .testimonials h3 {
+            font-size: 2.2rem;
+            margin-bottom: 3rem;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            text-align: left;
+            border-top: 4px solid var(--accent);
+        }
+
+        .stars {
+            color: var(--accent);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-card p {
+            font-size: 1.1rem;
+            color: #334155;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .testimonial-card strong {
+            color: var(--heading-color);
+            display: block;
         }
 
         /* Fascinations Section */
@@ -313,10 +369,36 @@
         .fascination-list p { margin: 0; color: #e2e8f0; }
         .fascination-list p strong { color: white; }
 
+        /* Authority Section */
+        .authority {
+            padding: 5rem 2rem;
+            background-color: white;
+            text-align: center;
+        }
+
+        .authority-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .authority h3 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .authority p {
+            font-size: 1.15rem;
+            color: #334155;
+            margin-bottom: 1.2rem;
+            line-height: 1.8;
+        }
+
         /* Bonuses Section */
         .bonuses {
             padding: 6rem 2rem;
-            background-color: white;
+            background-color: #f1f5f9;
             text-align: center;
         }
 
@@ -345,7 +427,7 @@
             object-fit: cover;
             border-radius: 12px;
             box-shadow: 0 15px 30px rgba(0,0,0,0.12);
-            border: 4px solid #f1f5f9;
+            border: 4px solid white;
             background-color: #e2e8f0;
             transition: transform 0.3s ease;
         }
@@ -354,9 +436,48 @@
             transform: translateY(-5px);
         }
 
+        /* Guarantee Section */
+        .guarantee-box {
+            padding: 4rem 2rem;
+            background-color: #fdf2f8; /* Rosa tenue para destacar pero diferente al de error */
+            text-align: center;
+        }
+
+        .guarantee-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 12px;
+            border: 2px dashed var(--danger);
+            position: relative;
+        }
+
+        .guarantee-icon {
+            font-size: 3rem;
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            padding: 0 15px;
+        }
+
+        .guarantee-box h3 {
+            font-size: 2rem;
+            color: var(--text-color);
+            margin: 1.5rem 0 1rem;
+        }
+
+        .guarantee-box p {
+            font-size: 1.1rem;
+            color: #475569;
+            line-height: 1.7;
+        }
+
         /* Value Stack / Offer Close Section */
         .offer-close {
-            padding: 5rem 2rem 8rem;
+            padding: 5rem 2rem 5rem;
             background-color: #e0f2fe;
             display: flex;
             justify-content: center;
@@ -473,6 +594,46 @@
             color: #64748b;
         }
 
+        /* FAQ Section */
+        .faq {
+            padding: 5rem 2rem 8rem;
+            background-color: white;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq h3 {
+            font-size: 2.2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .faq-item {
+            margin-bottom: 2rem;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 1.5rem;
+        }
+
+        .faq-question {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--heading-color);
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .faq-answer {
+            font-size: 1.1rem;
+            color: #475569;
+            line-height: 1.7;
+            padding-left: 35px;
+        }
+
         /* Footer */
         footer {
             text-align: center;
@@ -491,14 +652,21 @@
             .hero h2 { font-size: 1.15rem; }
             .agitation p { font-size: 1.15rem; padding: 1.5rem; }
             .cure h2 { font-size: 1.6rem; }
+            .cure p { font-size: 1.15rem; }
             .fascinations h3 { font-size: 2rem; }
             .fascination-list li { font-size: 1.1rem; flex-direction: column; align-items: center; text-align: center; }
+            .authority h3 { font-size: 1.8rem; }
+            .guarantee-container { padding: 2rem 1.5rem; }
+            .guarantee-box h3 { font-size: 1.5rem; }
             .crosshead { font-size: 2rem; }
             .offer-card { padding: 2rem 1.5rem; }
             .price-display .amount { font-size: 4rem; }
             .cta-btn { font-size: 1.15rem; padding: 1rem; }
             .stack-item { flex-direction: column; text-align: center; gap: 5px; }
             .stack-total { flex-direction: column; gap: 10px; }
+            .faq h3 { font-size: 1.8rem; }
+            .faq-question { font-size: 1.15rem; }
+            .faq-answer { padding-left: 0; margin-top: 10px; }
         }
     </style>
 </head>
@@ -514,7 +682,7 @@
     <section class="hero">
         <span class="hero-label">Ideal Para Principiantes</span>
         <h1>¿Frustrada Porque Tus Tejidos Nunca Quedan Como En La Foto y <span>No Entiendes Los Patrones?</span></h1>
-        <h2>Descubre cómo dominar los puntos básicos del crochet y tener 100 proyectos listos para tejer, 100% en español, incluso si estás empezando desde cero.</h2>
+        <h2>Descubre el método definitivo para dominar los puntos básicos del crochet y tener 100 proyectos listos para tejer, 100% en español, incluso si hoy no sabes ni cómo agarrar la aguja.</h2>
         
         <div class="price-anchor">
             <span class="normal-price">~~$47.00 USD~~</span>
@@ -530,17 +698,21 @@
         </p>
     </section>
 
-    <!-- AGITACIÓN -->
+    <!-- AGITACIÓN (EMPATÍA TÁCTICA) -->
     <section class="agitation">
         <div class="container">
-            <p>Imagina esto: pasas horas intentando descifrar un patrón de Pinterest que está en inglés o en ruso. Tejes, te equivocas y destejes hasta que te duelen las manos. Al final, ese amigurumi que se veía hermoso en la foto te queda deforme o con agujeros. Terminas frustrada, pensando que el crochet no es para ti. Pero la verdad es otra: no eres tú. Es que nadie te ha enseñado el por qué de cada punto.</p>
+            <p><strong>Imagina esto...</strong></p>
+            <p>Pasas horas intentando descifrar un patrón hermoso que encontraste en Pinterest. Trabajas con toda la ilusión, pero está en inglés (o peor, en ruso) y lleno de abreviaturas extrañas.</p>
+            <p>Tejes, te equivocas y destejes. Una y otra vez, hasta que te duelen las manos. Al final, ese amigurumi o top que se veía perfecto en la foto te queda deforme, tenso o lleno de agujeros. Terminas frustrada, guardando las lanas en un cajón y pensando en silencio: <em>"El crochet simplemente no es para mí, soy muy torpe para esto"</em>.</p>
+            <p style="margin-top: 2rem; color: var(--heading-color);"><strong>Pero déjame decirte la verdad: El problema no eres tú.</strong><br>Es que nadie se ha sentado a enseñarte el <em>por qué</em> de cada punto en tu propio idioma.</p>
         </div>
     </section>
 
     <!-- CURA Y VIDEO -->
     <section class="cure">
         <div class="container">
-            <h2>Elimina las conjeturas y la frustración. Con nuestro Libro Digital de Crochet para Principiantes, vas a pasar de no saber agarrar la aguja a crear proyectos de los que te sientas orgullosa.</h2>
+            <h2>Elimina las conjeturas, la frustración y la pérdida de tiempo.</h2>
+            <p>Con el <strong>Libro Digital de Crochet para Principiantes</strong>, vas a pasar de sentirte abrumada a leer cualquier patrón como si fuera tu idioma materno. Por fin podrás crear proyectos hermosos de los que te sientas profundamente orgullosa (y que tus amigas te pedirán que les tejas).</p>
             
             <div class="video-wrapper">
                 <iframe width="560" height="315" src="[PON AQUÍ TU ENLACE DE YOUTUBE]" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -556,32 +728,64 @@
         </div>
     </section>
 
+    <!-- PRUEBA SOCIAL (TESTIMONIOS) -->
+    <section class="testimonials">
+        <div class="container">
+            <h3>Mujeres como tú ya están tejiendo sin frustración:</h3>
+            
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Llevaba meses intentando hacer un simple muñeco y siempre me quedaba con huecos. Con las explicaciones de este libro, por fin entendí la tensión del hilo. ¡Ayer terminé mi primer proyecto perfecto y casi lloro de la emoción!"</p>
+                    <strong>— Marta G., 34 años. (Empezó desde cero)</strong>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Compraba patrones carísimos en inglés y me quedaba a la mitad por no entender las abreviaturas. Gracias a esta guía y a los 100 patrones en español, ahora tejo relajada mientras veo Netflix. Es la mejor inversión que he hecho."</p>
+                    <strong>— Silvia R., 42 años.</strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- FASCINACIONES -->
     <section class="fascinations">
         <div class="container">
-            <h3>Lo que descubrirás en el interior:</h3>
+            <h3>Lo que descubrirás en el interior de tu libro:</h3>
             <ul class="fascination-list">
                 <li>
                     <span class="icon">✨</span>
-                    <p><strong>El secreto para leer patrones gráficos fácilmente</strong> sin sentir que estás descifrando otro idioma.</p>
+                    <p><strong>El secreto para leer gráficos y patrones escritos fácilmente</strong>, sin sentir que estás tratando de descifrar jeroglíficos.</p>
                 </li>
                 <li>
                     <span class="icon">✨</span>
-                    <p><strong>La regla de oro de la tensión:</strong> cómo evitar para siempre los bordes irregulares.</p>
+                    <p><strong>La "Regla de Oro" de la tensión:</strong> el ajuste milimétrico para evitar bordes irregulares o tejidos que se encogen.</p>
                 </li>
                 <li>
                     <span class="icon">✨</span>
-                    <p><strong>El punto clave que transforma cualquier hilo</strong> en un acabado profesional.</p>
+                    <p><strong>El punto clave de anclaje</strong> que transforma cualquier lana barata en un acabado de aspecto profesional.</p>
                 </li>
             </ul>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE AUTORIDAD -->
+    <section class="authority">
+        <div class="authority-container">
+            <h3>¡Hola! Somos @tucrochetahora 👋</h3>
+            <p>Sé exactamente cómo te sientes, porque yo también estuve ahí. Recuerdo la frustración de comprar hilos hermosos, solo para terminar llorando de rabia frente a un video de YouTube que iba demasiado rápido o un patrón gratuito que omitía pasos importantes.</p>
+            <p>Destejí tantas veces que el hilo terminaba deshilachado y áspero.</p>
+            <p>Por eso creé esta comunidad y este método. Me cansé de que el crochet —que se supone es una terapia relajante— se convirtiera en un dolor de cabeza por culpa de instrucciones confusas.</p>
+            <p>Compilé todo lo que desearía haber sabido cuando empecé y lo traduje a un "español humano", paso a paso, para que tú no tengas que pasar por esa curva de sufrimiento. <strong>Mi misión es verte tejer con confianza.</strong></p>
         </div>
     </section>
 
     <!-- BONO Y GALERÍA -->
     <section class="bonuses">
         <div class="container">
-            <h3 class="crosshead">Nunca Más Te Quedes Sin Ideas: Tu Biblioteca Privada de 100 Patrones</h3>
-            <p class="bonus-text">Como regalo especial hoy, te llevas 100 patrones probados, modernos y 100% en español.</p>
+            <h3 class="crosshead">🎁 NUNCA MÁS TE QUEDES SIN IDEAS: Tu Biblioteca Privada de 100 Patrones</h3>
+            <p class="bonus-text">Como regalo especial por confiar en nosotros hoy, te llevas el acceso inmediato a nuestra bóveda secreta: <strong>100 patrones probados, de diseño moderno y 100% en español.</strong> Amigurumis, decoración, prendas... tendrás proyectos listos para tu aguja durante todo el año.</p>
             
             <div class="gallery">
                 <img src="[ENLACE_IMAGEN_1]" alt="Galería Patrones Crochet 1" class="gallery-img">
@@ -593,6 +797,16 @@
         </div>
     </section>
 
+    <!-- GARANTÍA -->
+    <section class="guarantee-box">
+        <div class="guarantee-container">
+            <div class="guarantee-icon">🛡️</div>
+            <h3>Garantía Blindada de 7 Días: "Tejes o Te Devuelvo Tu Dinero"</h3>
+            <p>Estoy tan segura de que este libro es el eslabón perdido en tu aprendizaje, que asumo todo el riesgo.</p>
+            <p>Descarga el libro hoy, lee los secretos de tensión, revisa los patrones. Si implementas el paso a paso y sientes que sigues sin entender los puntos, o simplemente crees que esto no es para ti, envíame un correo en los primeros 7 días y te devolveré hasta el último centavo de tus $9.99 sin hacerte ninguna pregunta. <strong>Tú no arriesgas nada.</strong></p>
+        </div>
+    </section>
+
     <!-- VALUE STACK / CIERRE DE OFERTA -->
     <section class="offer-close" id="comprar">
         <div class="offer-card">
@@ -600,11 +814,11 @@
             
             <div class="value-stack">
                 <div class="stack-item">
-                    <span>Libro Digital de Crochet para Principiantes</span>
+                    <span>📖 Libro Digital de Crochet para Principiantes</span>
                     <span>(Valorado en $17.00)</span>
                 </div>
                 <div class="stack-item bonus">
-                    <span>🎁 Bono Exclusivo: 100 Patrones en Español</span>
+                    <span>🎁 Bono Exclusivo: 100 Patrones Premium en Español</span>
                     <span>(Valorado en $30.00)</span>
                 </div>
                 <div class="stack-total">
@@ -632,6 +846,43 @@
         </div>
     </section>
 
+    <!-- FAQ -->
+    <section class="faq">
+        <div class="faq-container">
+            <h3>Preguntas Frecuentes:</h3>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>🤔</span>
+                    "¿Necesito comprar lanas caras o agujas especiales para empezar?"
+                </div>
+                <div class="faq-answer">
+                    ¡Para nada! El libro está diseñado para que empieces con los materiales más básicos que encuentres en cualquier mercería local. De hecho, te enseñamos qué tipo de hilo económico es el mejor para practicar sin frustrarte.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>🤔</span>
+                    "¿Este método me sirve si soy zurda?"
+                </div>
+                <div class="faq-answer">
+                    ¡Absolutamente! Las bases de lectura de patrones, conteo de puntos y tensión se aplican exactamente igual; solo tienes que espejar el movimiento de tus manos. El tejido quedará igual de hermoso.
+                </div>
+            </div>
+
+            <div class="faq-item" style="border-bottom: none;">
+                <div class="faq-question">
+                    <span>🤔</span>
+                    "¿Cómo y cuándo recibo el libro y los patrones?"
+                </div>
+                <div class="faq-answer">
+                    El acceso es <strong>inmediato</strong>. Apenas confirmes tu pago de $9.99, recibirás un correo electrónico seguro con los enlaces para descargar tu Libro Digital y la Biblioteca de 100 Patrones directamente en tu celular, tablet o computadora. ¡Podrás empezar a leerlos en menos de 2 minutos!
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- FOOTER -->
     <footer>
         <p>&copy; 2026 @tucrochetahora. Todos los derechos reservados. | Landing Page de Alta Conversión</p>
@@ -647,26 +898,20 @@
             const minutes = Math.floor(timeInSeconds / 60);
             let seconds = timeInSeconds % 60;
 
-            // Formatear ceros a la izquierda
             if (seconds < 10) {
                 seconds = '0' + seconds;
             }
             let minutesStr = minutes < 10 ? '0' + minutes : minutes;
 
-            // Mostrar el tiempo
             timerElement.textContent = minutesStr + ':' + seconds;
 
-            // Restar un segundo, o volver a empezar / detener
             if (timeInSeconds > 0) {
                 timeInSeconds--;
             } else {
-                // Para no perder la urgencia si se asustan, se detiene en 00:00 o reinicia
-                // Opcional: reiniciar para la ilusión
                 timeInSeconds = 15 * 60; 
             }
         }
 
-        // Ejecutar inmediatamente y luego cada segundo
         updateTimer();
         setInterval(updateTimer, 1000);
     </script>
