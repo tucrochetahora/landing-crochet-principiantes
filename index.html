@@ -9,14 +9,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #fdfbf7;
-            --text-color: #333333;
-            --primary: #e07a5f;
-            --primary-hover: #d26a4f;
-            --secondary: #81b29a;
-            --accent: #f2cc8f;
+            --bg-color: #f8fafc; /* Limpio, ligero azulado/gris */
+            --text-color: #1e293b; /* Texto oscuro, casi negro */
+            --heading-color: #1e3a8a; /* Azul confianza */
+            --primary: #059669; /* Verde éxito */
+            --primary-hover: #047857;
+            --secondary: #3b82f6; /* Azul acento */
+            --accent: #f59e0b; /* Naranja/amarillo vibrante */
+            --danger: #ef4444; /* Rojo urgencia */
             --font-heading: 'Outfit', sans-serif;
             --font-body: 'Inter', sans-serif;
+            --timer-bg: #fee2e2;
+            --timer-text: #991b1b;
         }
         
         * {
@@ -31,11 +35,12 @@
             color: var(--text-color);
             line-height: 1.6;
             overflow-x: hidden;
+            padding-top: 50px; /* Espacio para el sticky timer */
         }
 
-        h1, h2, h3 {
+        h1, h2, h3, h4 {
             font-family: var(--font-heading);
-            color: var(--text-color);
+            color: var(--heading-color);
             line-height: 1.2;
         }
 
@@ -44,49 +49,141 @@
             margin: 0 auto;
         }
 
+        /* Sticky Timer */
+        .sticky-timer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--timer-bg);
+            color: var(--timer-text);
+            text-align: center;
+            padding: 0.75rem 1rem;
+            font-weight: 700;
+            z-index: 1000;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            font-size: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .time-display {
+            background: white;
+            color: var(--danger);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.06);
+        }
+
         .cta-btn {
             display: inline-block;
             background-color: var(--primary);
             color: white;
             text-decoration: none;
             font-family: var(--font-heading);
-            font-size: 1.25rem;
-            font-weight: 700;
-            padding: 1.25rem 3rem;
+            font-size: 1.35rem;
+            font-weight: 800;
+            padding: 1.25rem 2rem;
             border-radius: 50px;
-            box-shadow: 0 10px 20px rgba(224, 122, 95, 0.3);
+            box-shadow: 0 10px 20px rgba(5, 150, 105, 0.3);
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
             text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            width: 100%;
+            max-width: 450px;
+            margin: 0 auto;
         }
         
         .cta-btn:hover {
             background-color: var(--primary-hover);
             transform: translateY(-3px);
-            box-shadow: 0 15px 25px rgba(224, 122, 95, 0.4);
+            box-shadow: 0 15px 25px rgba(5, 150, 105, 0.4);
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 10px 20px rgba(5, 150, 105, 0.3); }
+            50% { transform: scale(1.03); box-shadow: 0 15px 30px rgba(5, 150, 105, 0.5); }
+            100% { transform: scale(1); box-shadow: 0 10px 20px rgba(5, 150, 105, 0.3); }
+        }
+
+        /* Pricing Anchor */
+        .price-anchor {
+            text-align: center;
+            margin-top: 1.5rem;
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .normal-price {
+            text-decoration: line-through;
+            color: #94a3b8;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .today-price {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--text-color);
+        }
+
+        .savings-badge {
+            display: inline-block;
+            background-color: var(--accent);
+            color: #000;
+            font-size: 0.9rem;
+            font-weight: 800;
+            padding: 0.35rem 0.8rem;
+            border-radius: 20px;
+        }
+
+        .guarantee {
+            margin-top: 1.2rem;
+            font-size: 0.9rem;
+            color: #64748b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-weight: 500;
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #fdfbf7 0%, #f4eee0 100%);
+            background: linear-gradient(135deg, #f0fdf4 0%, #e0f2fe 100%);
             padding: 6rem 2rem;
             text-align: center;
-            border-bottom: 2px solid var(--secondary);
+            border-bottom: 3px solid #bfdbfe;
         }
 
         .hero-label {
             display: inline-block;
-            background-color: var(--secondary);
+            background-color: var(--heading-color);
             color: white;
-            padding: 0.5rem 1rem;
+            padding: 0.5rem 1.2rem;
             border-radius: 50px;
             font-size: 0.9rem;
-            font-weight: 600;
+            font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
             margin-bottom: 1.5rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 10px rgba(30,58,138,0.2);
         }
 
         .hero h1 {
@@ -94,7 +191,6 @@
             font-weight: 800;
             max-width: 900px;
             margin: 0 auto 1.5rem;
-            color: #2b2b2b;
         }
 
         .hero h1 span {
@@ -108,37 +204,42 @@
             font-weight: 500;
             max-width: 800px;
             margin: 0 auto 2.5rem;
-            color: #555;
+            color: #475569;
         }
 
         /* Agitation Section */
         .agitation {
             padding: 5rem 2rem;
-            background-color: var(--bg-color);
+            background-color: white;
             text-align: center;
         }
 
         .agitation p {
             font-size: 1.35rem;
-            color: #444;
+            color: #334155;
             max-width: 800px;
             margin: 0 auto;
             line-height: 1.8;
             font-weight: 500;
+            border-left: 5px solid var(--danger);
+            padding: 2rem;
+            background-color: #f8fafc;
+            border-radius: 0 12px 12px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            text-align: left;
         }
 
         /* Cure Section */
         .cure {
             padding: 5rem 2rem;
-            background-color: white;
+            background-color: #f1f5f9;
             text-align: center;
         }
 
         .cure h2 {
-            font-size: 2rem;
-            color: var(--primary);
+            font-size: 2.2rem;
             margin-bottom: 3rem;
-            max-width: 800px;
+            max-width: 850px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -148,11 +249,11 @@
             padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
             height: 0;
             max-width: 800px;
-            margin: 0 auto 3rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin: 0 auto 2rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
             border-radius: 12px;
             overflow: hidden;
-            border: 4px solid var(--secondary);
+            border: 4px solid white;
             background-color: #000;
         }
 
@@ -166,16 +267,16 @@
 
         /* Fascinations Section */
         .fascinations {
-            padding: 5rem 2rem;
-            background-color: var(--secondary);
+            padding: 6rem 2rem;
+            background-color: var(--heading-color);
             color: white;
         }
 
         .fascinations h3 {
             text-align: center;
-            font-size: 2.2rem;
+            font-size: 2.4rem;
             color: white;
-            margin-bottom: 3rem;
+            margin-bottom: 3.5rem;
         }
 
         .fascination-list {
@@ -185,53 +286,57 @@
         }
 
         .fascination-list li {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
             padding: 1.5rem 2rem;
             margin-bottom: 1.5rem;
             display: flex;
             align-items: flex-start;
             gap: 15px;
-            font-size: 1.2rem;
-            transition: transform 0.3s ease;
+            font-size: 1.25rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
 
         .fascination-list li:hover {
-            transform: translateX(10px);
-            background: rgba(255, 255, 255, 0.15);
+            transform: translateX(10px) scale(1.02);
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255,255,255,0.3);
         }
 
         .fascination-list .icon {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             line-height: 1.2;
         }
         
-        .fascination-list p { margin: 0; }
+        .fascination-list p { margin: 0; color: #e2e8f0; }
+        .fascination-list p strong { color: white; }
 
         /* Bonuses Section */
         .bonuses {
             padding: 6rem 2rem;
-            background-color: #faf7f2;
+            background-color: white;
             text-align: center;
         }
 
         .crosshead {
             font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
         }
 
         .bonus-text {
-            font-size: 1.25rem;
-            color: #555;
+            font-size: 1.35rem;
+            color: #475569;
             margin-bottom: 3rem;
+            font-weight: 500;
         }
 
         .gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
         }
 
         .gallery-img {
@@ -239,32 +344,95 @@
             height: 250px;
             object-fit: cover;
             border-radius: 12px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-            border: 3px solid white;
-            background-color: #ddd;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+            border: 4px solid #f1f5f9;
+            background-color: #e2e8f0;
+            transition: transform 0.3s ease;
         }
 
-        /* Offer Close Section */
+        .gallery-img:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Value Stack / Offer Close Section */
         .offer-close {
-            padding: 4rem 2rem 6rem;
-            background-color: var(--bg-color);
+            padding: 5rem 2rem 8rem;
+            background-color: #e0f2fe;
             display: flex;
             justify-content: center;
         }
 
         .offer-card {
             background: white;
-            padding: 4rem;
+            padding: 3.5rem;
             border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-            border: 2px solid var(--accent);
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+            border: 3px solid var(--primary);
             text-align: center;
-            max-width: 600px;
+            max-width: 650px;
             width: 100%;
+            position: relative;
         }
 
         .offer-card h3 {
-            font-size: 2rem;
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .value-stack {
+            text-align: left;
+            background: #f8fafc;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            border: 1px solid #cbd5e1;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .stack-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 0;
+            border-bottom: 1px dashed #cbd5e1;
+            font-size: 1.1rem;
+            color: #334155;
+        }
+        
+        .stack-item:nth-last-child(2) {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .stack-item.bonus {
+            color: var(--primary);
+            font-weight: 700;
+            margin-top: 0.5rem;
+        }
+
+        .stack-total {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1.5rem;
+            margin-top: 1.5rem;
+            border-top: 2px solid #cbd5e1;
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: #475569;
+        }
+
+        .final-offer-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--heading-color);
+            margin: 1.5rem 0 0.2rem;
+        }
+
+        .urgency-text {
+            color: var(--danger);
+            font-weight: 700;
+            font-size: 1.1rem;
             margin-bottom: 1rem;
         }
 
@@ -272,26 +440,29 @@
             display: flex;
             justify-content: center;
             align-items: flex-start;
-            color: var(--text-color);
-            margin: 2rem 0;
+            margin: 1rem 0 2rem;
         }
 
         .price-display .currency {
             font-size: 2rem;
             font-weight: 700;
             margin-top: 0.5rem;
+            color: var(--primary);
         }
 
         .price-display .amount {
             font-size: 5rem;
             font-weight: 800;
             line-height: 1;
+            color: var(--primary);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
         }
 
         .price-display .cents {
             font-size: 2rem;
             font-weight: 700;
             margin-top: 0.5rem;
+            color: var(--primary);
         }
 
         .price-display .currency-code {
@@ -299,68 +470,64 @@
             font-weight: 500;
             margin-top: 1rem;
             margin-left: 0.5rem;
-            color: #888;
-        }
-
-        .offer-card p {
-            font-size: 1.1rem;
-            color: #666;
-            margin-bottom: 2rem;
-        }
-
-        .pulse {
-            animation: pulse 2s infinite;
-        }
-        
-        .guarantee {
-            margin-top: 1.5rem;
-            font-size: 0.95rem;
-            color: #777;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            font-weight: 500;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); box-shadow: 0 10px 20px rgba(224, 122, 95, 0.3); }
-            50% { transform: scale(1.03); box-shadow: 0 15px 30px rgba(224, 122, 95, 0.5); }
-            100% { transform: scale(1); box-shadow: 0 10px 20px rgba(224, 122, 95, 0.3); }
+            color: #64748b;
         }
 
         /* Footer */
         footer {
             text-align: center;
             padding: 3rem 2rem;
-            background-color: #2b2b2b;
-            color: #aaa;
-            font-size: 0.9rem;
+            background-color: #0f172a;
+            color: #94a3b8;
+            font-size: 0.95rem;
         }
 
         /* Responsive */
         @media (max-width: 768px) {
+            body { padding-top: 60px; }
+            .sticky-timer { font-size: 0.85rem; padding: 0.5rem; flex-direction: column; gap: 5px; }
             .hero { padding: 4rem 1.5rem; }
-            .hero h1 { font-size: 2.2rem; }
-            .hero h2 { font-size: 1.1rem; }
-            .agitation p { font-size: 1.15rem; }
-            .cure h2 { font-size: 1.5rem; }
-            .fascinations h3 { font-size: 1.8rem; }
-            .fascination-list li { font-size: 1rem; flex-direction: column; align-items: center; text-align: center; }
+            .hero h1 { font-size: 2.3rem; }
+            .hero h2 { font-size: 1.15rem; }
+            .agitation p { font-size: 1.15rem; padding: 1.5rem; }
+            .cure h2 { font-size: 1.6rem; }
+            .fascinations h3 { font-size: 2rem; }
+            .fascination-list li { font-size: 1.1rem; flex-direction: column; align-items: center; text-align: center; }
             .crosshead { font-size: 2rem; }
-            .offer-card { padding: 2.5rem 1.5rem; }
+            .offer-card { padding: 2rem 1.5rem; }
             .price-display .amount { font-size: 4rem; }
-            .cta-btn { font-size: 1.1rem; padding: 1rem 1.5rem; width: 100%; display: block; }
+            .cta-btn { font-size: 1.15rem; padding: 1rem; }
+            .stack-item { flex-direction: column; text-align: center; gap: 5px; }
+            .stack-total { flex-direction: column; gap: 10px; }
         }
     </style>
 </head>
 <body>
+
+    <!-- STICKY TIMER (URGENCIA) -->
+    <div class="sticky-timer">
+        <span>⚠️ Oferta de lanzamiento y Bonos expiran en:</span>
+        <span class="time-display" id="timer">15:00</span>
+    </div>
 
     <!-- HERO SECTION -->
     <section class="hero">
         <span class="hero-label">Ideal Para Principiantes</span>
         <h1>¿Frustrada Porque Tus Tejidos Nunca Quedan Como En La Foto y <span>No Entiendes Los Patrones?</span></h1>
         <h2>Descubre cómo dominar los puntos básicos del crochet y tener 100 proyectos listos para tejer, 100% en español, incluso si estás empezando desde cero.</h2>
+        
+        <div class="price-anchor">
+            <span class="normal-price">~~$47.00 USD~~</span>
+            <span class="today-price">Hoy: $9.99 USD</span>
+            <span class="savings-badge">Ahorras un 78%</span>
+        </div>
+
+        <a href="#comprar" class="cta-btn pulse">¡Sí, Quiero Aprender a Tejer Ahora!</a>
+        
+        <p class="guarantee">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+            Pago 100% Seguro. Acceso Inmediato.
+        </p>
     </section>
 
     <!-- AGITACIÓN -->
@@ -376,11 +543,16 @@
             <h2>Elimina las conjeturas y la frustración. Con nuestro Libro Digital de Crochet para Principiantes, vas a pasar de no saber agarrar la aguja a crear proyectos de los que te sientas orgullosa.</h2>
             
             <div class="video-wrapper">
-                <!-- Se ha usado un iframe estándar de YouTube como placeholder responsivo -->
                 <iframe width="560" height="315" src="[PON AQUÍ TU ENLACE DE YOUTUBE]" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
 
-            <a href="#comprar" class="cta-btn pulse">¡Sí, Quiero Mi Libro y Mis 100 Patrones por $9.99!</a>
+            <div class="price-anchor">
+                <span class="normal-price">~~$47.00 USD~~</span>
+                <span class="today-price">Hoy: $9.99 USD</span>
+                <span class="savings-badge">Ahorras un 78%</span>
+            </div>
+
+            <a href="#comprar" class="cta-btn pulse" style="display: block;">¡Sí, Quiero Mi Libro y Mis 100 Patrones por $9.99!</a>
         </div>
     </section>
 
@@ -417,24 +589,44 @@
                 <img src="[ENLACE_IMAGEN_3]" alt="Galería Patrones Crochet 3" class="gallery-img">
             </div>
 
-            <a href="#comprar" class="cta-btn">¡Sí, Quiero Mi Libro y Mis 100 Patrones por $9.99!</a>
+            <a href="#comprar" class="cta-btn pulse" style="display: block;">¡Ver Oferta Completa Abajo!</a>
         </div>
     </section>
 
-    <!-- CIERRE DE OFERTA -->
+    <!-- VALUE STACK / CIERRE DE OFERTA -->
     <section class="offer-close" id="comprar">
         <div class="offer-card">
-            <h3>Empieza hoy mismo</h3>
+            <h3>Resumen de tu Pedido</h3>
+            
+            <div class="value-stack">
+                <div class="stack-item">
+                    <span>Libro Digital de Crochet para Principiantes</span>
+                    <span>(Valorado en $17.00)</span>
+                </div>
+                <div class="stack-item bonus">
+                    <span>🎁 Bono Exclusivo: 100 Patrones en Español</span>
+                    <span>(Valorado en $30.00)</span>
+                </div>
+                <div class="stack-total">
+                    <span>Valor Total:</span>
+                    <span style="text-decoration: line-through; color: var(--danger);">~~$47.00~~</span>
+                </div>
+            </div>
+
+            <p class="final-offer-text">Llévatelo HOY por solo:</p>
+            <p class="urgency-text">(Solo por las próximas horas)</p>
+
             <div class="price-display">
                 <span class="currency">$</span>
                 <span class="amount">9</span>
                 <span class="cents">.99</span>
                 <span class="currency-code">USD</span>
             </div>
-            <p>Acceso inmediato y de por vida a los libros digitales y a tu biblioteca de 100 patrones extra.</p>
-            <a href="#" class="cta-btn pulse" style="width: 100%; margin-top: 1rem;">¡Sí, Quiero Mi Libro y Mis 100 Patrones por $9.99!</a>
-            <p class="guarantee">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry=\"2\"></rect><path d=\"M7 11V7a5 5 0 0 1 10 0v4\"></path></svg>
+
+            <a href="#" class="cta-btn pulse" style="margin-top: 0.5rem; display: block;">¡Sí, Quiero Mi Libro y Mis 100 Patrones por $9.99!</a>
+            
+            <p class="guarantee" style="margin-top: 2rem;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
                 Pago 100% Seguro. Acceso Inmediato.
             </p>
         </div>
@@ -445,5 +637,38 @@
         <p>&copy; 2026 @tucrochetahora. Todos los derechos reservados. | Landing Page de Alta Conversión</p>
     </footer>
 
+    <!-- SCRIPT DEL TEMPORIZADOR DE URGENCIA -->
+    <script>
+        // Configurar el temporizador para 15 minutos (900 segundos)
+        let timeInSeconds = 15 * 60;
+        const timerElement = document.getElementById('timer');
+
+        function updateTimer() {
+            const minutes = Math.floor(timeInSeconds / 60);
+            let seconds = timeInSeconds % 60;
+
+            // Formatear ceros a la izquierda
+            if (seconds < 10) {
+                seconds = '0' + seconds;
+            }
+            let minutesStr = minutes < 10 ? '0' + minutes : minutes;
+
+            // Mostrar el tiempo
+            timerElement.textContent = minutesStr + ':' + seconds;
+
+            // Restar un segundo, o volver a empezar / detener
+            if (timeInSeconds > 0) {
+                timeInSeconds--;
+            } else {
+                // Para no perder la urgencia si se asustan, se detiene en 00:00 o reinicia
+                // Opcional: reiniciar para la ilusión
+                timeInSeconds = 15 * 60; 
+            }
+        }
+
+        // Ejecutar inmediatamente y luego cada segundo
+        updateTimer();
+        setInterval(updateTimer, 1000);
+    </script>
 </body>
 </html>
