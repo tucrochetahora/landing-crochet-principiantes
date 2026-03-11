@@ -5,15 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aprende Crochet Desde Cero | @tucrochetahora</title>
     <style>
-        /* Variables de Color y Tipografía */
+        /* Variables de Color y TipografÃ­a */
         :root {
             --primary-bg: #F8FAFC;
+            --hero-bg: #EAF7F8;
             --text-main: #334155;
             --text-dark: #0F172A;
-            --cta-color: #F97316; /* Naranja Vibrante */
-            --cta-hover: #EA580C;
+            --cta-color: #0FA968; /* Verde del botÃ³n de la imagen */
+            --cta-hover: #047857;
+            --headline-blue: #1E3A8A;
+            --headline-green: #059669;
             --trust-blue: #1E3A8A;
             --accent-gold: #F59E0B;
+            --badge-orange: #F59E0B;
             --price-muted: #94A3B8;
         }
 
@@ -31,7 +35,7 @@
             font-size: 16px;
         }
 
-        /* Utilidades de Diseño (Mobile-First) */
+        /* Utilidades de DiseÃ±o (Mobile-First) */
         .container {
             width: 90%;
             max-width: 800px;
@@ -56,13 +60,29 @@
             border-bottom: 2px solid #FCA5A5;
         }
 
-        /* Tipografía */
+        /* Header / Hero Section */
+        .hero-section {
+            background-color: var(--hero-bg);
+            padding: 3rem 1rem;
+        }
+
+        .hero-container {
+            width: 90%;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* TipografÃ­a */
         h1 {
-            color: var(--trust-blue);
-            font-size: 2rem;
-            line-height: 1.2;
+            color: var(--headline-blue);
+            font-size: 2.2rem;
+            line-height: 1.25;
             margin-bottom: 1.5rem;
-            font-weight: 800;
+            font-weight: 900;
+        }
+        
+        .hero-title-green {
+            color: var(--headline-green);
         }
 
         h2 {
@@ -86,61 +106,68 @@
             letter-spacing: 0.5px;
         }
 
-        /* Precios */
+        /* Precios - Horizontal */
         .price-container {
-            margin: 1.5rem 0;
-            background: #fff;
-            padding: 1.5rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            border: 1px solid #E2E8F0;
+            margin: 2rem auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
         }
 
         .price-original {
             text-decoration: line-through;
             color: var(--price-muted);
             font-size: 1.2rem;
-            margin-right: 10px;
         }
 
         .price-today {
-            color: #16A34A; /* Verde éxito */
-            font-size: 2.5rem;
+            color: var(--text-dark);
+            font-size: 1.6rem;
             font-weight: 900;
-            display: block;
-            line-height: 1;
-            margin: 5px 0;
+            display: inline-block;
         }
 
         .price-savings {
-            color: var(--cta-color);
+            background-color: var(--badge-orange);
+            color: #000;
             font-weight: bold;
-            font-size: 1rem;
+            font-size: 0.95rem;
+            padding: 5px 12px;
+            border-radius: 20px;
         }
 
-        /* Botones y Animación */
+        /* Botones y AnimaciÃ³n */
         .btn-cta {
             display: block;
             width: 100%;
+            max-width: 500px;
             background-color: var(--cta-color);
             color: #ffffff;
             text-align: center;
-            padding: 18px 20px;
-            font-size: 1.2rem;
-            font-weight: bold;
+            padding: 22px 30px;
+            font-size: 1.4rem;
+            font-weight: 900;
             text-decoration: none;
-            border-radius: 8px;
-            margin: 20px auto 5px auto;
-            box-shadow: 0 4px 15px rgba(249, 115, 22, 0.4);
-            transition: background 0.3s;
-            animation: pulse 2s infinite;
+            border-radius: 50px; /* Forma de pÃ­ldora */
+            margin: 20px auto 10px auto;
+            box-shadow: 0 8px 25px rgba(15, 169, 104, 0.4);
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            animation: bouncePulse 2.5s infinite;
         }
 
-        .btn-cta:hover { background-color: var(--cta-hover); }
+        .btn-cta:hover { 
+            background-color: var(--cta-hover); 
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(15, 169, 104, 0.6);
+        }
 
-        @keyframes pulse {
+        @keyframes bouncePulse {
             0% { transform: scale(1); }
-            50% { transform: scale(1.03); }
+            50% { transform: scale(1.05); }
             100% { transform: scale(1); }
         }
 
@@ -212,136 +239,137 @@
 <body>
 
     <div id="urgency-banner">
-        ⚠️ Oferta de lanzamiento y Bonos expiran en: <span id="timer">14:23</span>
+        âš ï¸ Oferta de lanzamiento y Bonos expiran en: <span id="timer">14:23</span>
     </div>
 
     <div class="container">
-        
-        <header class="text-center">
-            <div class="badge">Ideal Para Principiantes</div>
-            <h1>¿Frustrada Porque Tus Tejidos Nunca Quedan Como En La Foto y No Entiendes Los Patrones?</h1>
-            <p style="font-size: 1.1rem; color: #475569;">Descubre el método definitivo para dominar los puntos básicos del crochet y tener 100 proyectos listos para tejer, 100% en español, incluso si hoy no sabes ni cómo agarrar la aguja.</p>
+    <div class="hero-section">
+        <div class="hero-container text-center">
+            <h1>Â¿Frustrada Porque Tus Tejidos Nunca Quedan Como En La Foto y <br><span class="hero-title-green">No Entiendes Los Patrones?</span></h1>
+            <p style="font-size: 1.2rem; color: #334155; font-weight: 500; margin-bottom: 2rem;">Descubre cÃ³mo dominar los puntos bÃ¡sicos del crochet y tener 100 proyectos listos para tejer, 100% en espaÃ±ol, incluso si estÃ¡s empezando desde cero.</p>
             
-            <img src="mockup.png" alt="Libro Digital de Crochet para Principiantes y 100 Patrones" style="width: 100%; max-width: 700px; height: auto; margin: 1.5rem auto; display: block;">
-
             <div class="price-container">
                 <span class="price-original">~~$47.00 USD~~</span>
                 <span class="price-today">Hoy: $9.99 USD</span>
-                <span class="price-savings">(Ahorras un 78%)</span>
+                <span class="price-savings">Ahorras un 78%</span>
             </div>
 
             <a href="#link-de-pago" class="checkout-link">
-                <button class="btn-cta">👉 ¡Sí, Quiero Aprender a Tejer Ahora!</button>
+                <button class="btn-cta">Â¡SÃ, QUIERO APRENDER A TEJER AHORA!</button>
             </a>
-            <div class="secure-text">🔒 Pago 100% Seguro. Acceso Inmediato.</div>
-        </header>
+            <div class="secure-text">ðŸ”’ Pago 100% Seguro. Acceso Inmediato.</div>
+        </div>
+    </div>
+
+    <!-- Secciones originales -->
+    <div class="container">
 
         <section class="section-box">
             <p><strong>Imagina esto por un momento...</strong></p>
-            <p>Pasas horas intentando descifrar un patrón hermoso que encontraste en Pinterest. Trabajas con toda la ilusión, pero está en inglés (o peor, en ruso) y lleno de abreviaturas extrañas.</p>
-            <p>Tejes, te equivocas y destejes. Una y otra vez, hasta que te duelen las manos. Al final, ese amigurumi o top que se veía perfecto en la foto te queda deforme, tenso o lleno de agujeros.</p>
+            <p>Pasas horas intentando descifrar un patrÃ³n hermoso que encontraste en Pinterest. Trabajas con toda la ilusiÃ³n, pero estÃ¡ en inglÃ©s (o peor, en ruso) y lleno de abreviaturas extraÃ±as.</p>
+            <p>Tejes, te equivocas y destejes. Una y otra vez, hasta que te duelen las manos. Al final, ese amigurumi o top que se veÃ­a perfecto en la foto te queda deforme, tenso o lleno de agujeros.</p>
             
             <p><strong>Recuerdo perfectamente la tarde en que casi tiro mis agujas a la basura.</strong></p>
-            <p>Llevaba días intentando tejer un muñeco para un regalo muy especial. Seguí cada paso de un video en YouTube que iba a mil por hora. Destejí tantas veces que el hilo terminó áspero y deshilachado. Al final, cuando logré rellenarlo, se le veían huecos horribles y la cabeza le quedó torcida. Sentí un nudo en el estómago, guardé todas mis lanas en un cajón y pensé en silencio: <em>"Definitivamente soy demasiado torpe para esto. El crochet simplemente no es para mí".</em></p>
+            <p>Llevaba dÃ­as intentando tejer un muÃ±eco para un regalo muy especial. SeguÃ­ cada paso de un video en YouTube que iba a mil por hora. DestejÃ­ tantas veces que el hilo terminÃ³ Ã¡spero y deshilachado. Al final, cuando logrÃ© rellenarlo, se le veÃ­an huecos horribles y la cabeza le quedÃ³ torcida. SentÃ­ un nudo en el estÃ³mago, guardÃ© todas mis lanas en un cajÃ³n y pensÃ© en silencio: <em>"Definitivamente soy demasiado torpe para esto. El crochet simplemente no es para mÃ­".</em></p>
             
-            <p><strong>Pero déjame decirte la verdad: El problema nunca fuiste tú.</strong></p>
-            <p>Son esos "gurús" de YouTube que editan los videos para que se vean estéticos, saltándose los pasos cruciales y asumiendo que ya sabes cómo hacerlo. Son las revistas y los diseñadores elitistas que escriben patrones llenos de jeroglíficos incomprensibles. Pareciera que disfrutan haciéndote sentir torpe a propósito.</p>
-            <p class="highlight">Nadie se ha sentado a enseñarte el por qué de cada punto en un idioma humano.</p>
+            <p><strong>Pero dÃ©jame decirte la verdad: El problema nunca fuiste tÃº.</strong></p>
+            <p>Son esos "gurÃºs" de YouTube que editan los videos para que se vean estÃ©ticos, saltÃ¡ndose los pasos cruciales y asumiendo que ya sabes cÃ³mo hacerlo. Son las revistas y los diseÃ±adores elitistas que escriben patrones llenos de jeroglÃ­ficos incomprensibles. Pareciera que disfrutan haciÃ©ndote sentir torpe a propÃ³sito.</p>
+            <p class="highlight">Nadie se ha sentado a enseÃ±arte el por quÃ© de cada punto en un idioma humano.</p>
         </section>
 
         <section>
-            <h2>¡Hola! Somos @tucrochetahora 👋</h2>
-            <p>Después de esa frustración, nos obsesionamos con "descifrar el código". Queríamos que el crochet volviera a ser esa terapia relajante que debe ser, y no un dolor de cabeza. Compilamos todo lo que desearíamos haber sabido al empezar y creamos el <strong>Libro Digital de Crochet para Principiantes</strong>.</p>
-            <p class="highlight" style="font-size: 1.2rem; text-align: center; margin: 2rem 0;">Vas a pasar de sentirte abrumada a leer cualquier patrón como si fuera tu idioma materno.</p>
+            <h2>Â¡Hola! Somos @tucrochetahora ðŸ‘‹</h2>
+            <p>DespuÃ©s de esa frustraciÃ³n, nos obsesionamos con "descifrar el cÃ³digo". QuerÃ­amos que el crochet volviera a ser esa terapia relajante que debe ser, y no un dolor de cabeza. Compilamos todo lo que desearÃ­amos haber sabido al empezar y creamos el <strong>Libro Digital de Crochet para Principiantes</strong>.</p>
+            <p class="highlight" style="font-size: 1.2rem; text-align: center; margin: 2rem 0;">Vas a pasar de sentirte abrumada a leer cualquier patrÃ³n como si fuera tu idioma materno.</p>
         </section>
 
         <section>
-            <h2>Mujeres como tú ya están tejiendo sin frustración:</h2>
+            <h2>Mujeres como tÃº ya estÃ¡n tejiendo sin frustraciÃ³n:</h2>
             
             <div class="testimonial-card">
-                <div class="stars">⭐⭐⭐⭐⭐</div>
-                <p class="testimonial-text">"Llevaba meses intentando hacer un simple muñeco y siempre me quedaba con huecos. Con las explicaciones de este libro, por fin entendí la tensión del hilo. ¡Ayer terminé mi primer proyecto perfecto y casi lloro de la emoción!"</p>
-                <p class="testimonial-author">— Marta G., 34 años. (Empezó desde cero)</p>
+                <div class="stars">â­â­â­â­â­</div>
+                <p class="testimonial-text">"Llevaba meses intentando hacer un simple muÃ±eco y siempre me quedaba con huecos. Con las explicaciones de este libro, por fin entendÃ­ la tensiÃ³n del hilo. Â¡Ayer terminÃ© mi primer proyecto perfecto y casi lloro de la emociÃ³n!"</p>
+                <p class="testimonial-author">â€” Marta G., 34 aÃ±os. (EmpezÃ³ desde cero)</p>
             </div>
 
             <div class="testimonial-card">
-                <div class="stars">⭐⭐⭐⭐⭐</div>
-                <p class="testimonial-text">"Compraba patrones carísimos en inglés y me quedaba a la mitad por no entender las abreviaturas. Gracias a esta guía y a los 100 patrones en español, ahora tejo relajada mientras veo Netflix. Es la mejor inversión."</p>
-                <p class="testimonial-author">— Silvia R., 42 años.</p>
+                <div class="stars">â­â­â­â­â­</div>
+                <p class="testimonial-text">"Compraba patrones carÃ­simos en inglÃ©s y me quedaba a la mitad por no entender las abreviaturas. Gracias a esta guÃ­a y a los 100 patrones en espaÃ±ol, ahora tejo relajada mientras veo Netflix. Es la mejor inversiÃ³n."</p>
+                <p class="testimonial-author">â€” Silvia R., 42 aÃ±os.</p>
             </div>
         </section>
 
         <section class="section-box">
-            <h2>Lo que descubrirás en el interior de tu libro:</h2>
+            <h2>Lo que descubrirÃ¡s en el interior de tu libro:</h2>
             <ul class="bullet-list">
-                <li><span>✨</span><strong>El "Truco del Traductor":</strong> Cómo leer cualquier gráfico o patrón escrito de un vistazo, sin sentir que estás descifrando jeroglíficos ni tener que memorizar listas interminables de abreviaturas.</li>
-                <li><span>✨</span><strong>La "Regla de Oro" de la Tensión:</strong> El ajuste milimétrico e infalible para evitar para siempre los bordes irregulares o los tejidos que se encogen misteriosamente.</li>
-                <li><span>✨</span><strong>El Movimiento Invisible:</strong> El punto de anclaje secreto que las expertas ocultan y que transforma hasta la lana más barata del supermercado en un tejido de aspecto premium y profesional.</li>
+                <li><span>âœ¨</span><strong>El "Truco del Traductor":</strong> CÃ³mo leer cualquier grÃ¡fico o patrÃ³n escrito de un vistazo, sin sentir que estÃ¡s descifrando jeroglÃ­ficos ni tener que memorizar listas interminables de abreviaturas.</li>
+                <li><span>âœ¨</span><strong>La "Regla de Oro" de la TensiÃ³n:</strong> El ajuste milimÃ©trico e infalible para evitar para siempre los bordes irregulares o los tejidos que se encogen misteriosamente.</li>
+                <li><span>âœ¨</span><strong>El Movimiento Invisible:</strong> El punto de anclaje secreto que las expertas ocultan y que transforma hasta la lana mÃ¡s barata del supermercado en un tejido de aspecto premium y profesional.</li>
             </ul>
         </section>
 
         <section>
-            <h2><span>🎁</span> BÓVEDA SECRETA: Tu Biblioteca Privada de 100 Patrones</h2>
-            <p>Como regalo especial por confiar en nosotros hoy, te llevas el acceso inmediato a nuestra colección privada: <strong>100 patrones probados, modernos y 100% en español.</strong> Amigurumis, decoración, prendas... tendrás proyectos listos para tu margin durante todo el año, sin tener que volver a buscar en Pinterest.</p>
+            <h2><span>ðŸŽ</span> BÃ“VEDA SECRETA: Tu Biblioteca Privada de 100 Patrones</h2>
+            <p>Como regalo especial por confiar en nosotros hoy, te llevas el acceso inmediato a nuestra colecciÃ³n privada: <strong>100 patrones probados, modernos y 100% en espaÃ±ol.</strong> Amigurumis, decoraciÃ³n, prendas... tendrÃ¡s proyectos listos para tu margin durante todo el aÃ±o, sin tener que volver a buscar en Pinterest.</p>
         </section>
 
         <section class="section-box guarantee-box">
-            <h2 style="color: var(--accent-gold); margin-top: 0;"><span>🛡️</span> Garantía Blindada de 7 Días: "Tejes o Te Devuelvo Tu Dinero"</h2>
-            <p>Estamos tan seguros de que este libro es el eslabón perdido en tu aprendizaje, que asumimos el 100% del riesgo.</p>
-            <p>Descarga el libro hoy, lee los secretos de tensión, revisa los patrones. Si implementas el paso a paso y sientes que sigues sin entender los puntos, o simplemente crees que esto no es para ti, envíanos un correo en los primeros 7 días. Te devolveremos hasta el último centavo de tus $9.99 sin hacerte ninguna pregunta, y te quedas con los materiales. Tú no arriesgas absolutamente nada.</p>
+            <h2 style="color: var(--accent-gold); margin-top: 0;"><span>ðŸ›¡ï¸</span> GarantÃ­a Blindada de 7 DÃ­as: "Tejes o Te Devuelvo Tu Dinero"</h2>
+            <p>Estamos tan seguros de que este libro es el eslabÃ³n perdido en tu aprendizaje, que asumimos el 100% del riesgo.</p>
+            <p>Descarga el libro hoy, lee los secretos de tensiÃ³n, revisa los patrones. Si implementas el paso a paso y sientes que sigues sin entender los puntos, o simplemente crees que esto no es para ti, envÃ­anos un correo en los primeros 7 dÃ­as. Te devolveremos hasta el Ãºltimo centavo de tus $9.99 sin hacerte ninguna pregunta, y te quedas con los materiales. TÃº no arriesgas absolutamente nada.</p>
         </section>
 
         <section>
-            <h2>Ha llegado el momento de tomar una decisión. Tienes 3 opciones:</h2>
+            <h2>Ha llegado el momento de tomar una decisiÃ³n. Tienes 3 opciones:</h2>
             <ul class="bullet-list">
-                <li><span>🔴</span> <strong>Opción 1: No hacer nada.</strong> Seguir guardando lanas en el cajón, acumulando patrones hermosos que nunca terminan bien y sintiendo que el crochet simplemente "no se te da".</li>
-                <li><span>🟡</span> <strong>Opción 2: Intentar adivinar.</strong> Seguir perdiendo horas en videos que van demasiado rápido, frustrándote, destejiendo hasta que te duelan las manos y desperdiciando material caro.</li>
-                <li><span>🟢</span> <strong class="highlight">Opción 3: El camino sin riesgo.</strong> Invertir solo $9.99 hoy, unirte a la comunidad de @tucrochetahora y empezar a tejer proyectos impecables esta misma noche con un método probado y 100% en español.</li>
+                <li><span>ðŸ”´</span> <strong>OpciÃ³n 1: No hacer nada.</strong> Seguir guardando lanas en el cajÃ³n, acumulando patrones hermosos que nunca terminan bien y sintiendo que el crochet simplemente "no se te da".</li>
+                <li><span>ðŸŸ¡</span> <strong>OpciÃ³n 2: Intentar adivinar.</strong> Seguir perdiendo horas en videos que van demasiado rÃ¡pido, frustrÃ¡ndote, destejiendo hasta que te duelan las manos y desperdiciando material caro.</li>
+                <li><span>ðŸŸ¢</span> <strong class="highlight">OpciÃ³n 3: El camino sin riesgo.</strong> Invertir solo $9.99 hoy, unirte a la comunidad de @tucrochetahora y empezar a tejer proyectos impecables esta misma noche con un mÃ©todo probado y 100% en espaÃ±ol.</li>
             </ul>
-            <p style="margin-top: 2rem; font-style: italic;">Imagina la sensación de terminar tu primer amigurumi perfecto. Imagina la sonrisa en tu rostro cuando mires los puntos parejos y sin un solo hueco. Imagina el orgullo cuando tus amigas lo vean y te pregunten asombradas: "¿De verdad hiciste esto tú sola?". Esa sensación de paz y logro está a un solo clic de distancia.</p>
+            <p style="margin-top: 2rem; font-style: italic;">Imagina la sensaciÃ³n de terminar tu primer amigurumi perfecto. Imagina la sonrisa en tu rostro cuando mires los puntos parejos y sin un solo hueco. Imagina el orgullo cuando tus amigas lo vean y te pregunten asombradas: "Â¿De verdad hiciste esto tÃº sola?". Esa sensaciÃ³n de paz y logro estÃ¡ a un solo clic de distancia.</p>
         </section>
 
         <section class="section-box text-center" style="background-color: #F1F5F9;">
             <h2>Resumen de tu Pedido:</h2>
-            <p>📖 Libro Digital de Crochet para Principiantes (Valorado en $17.00)<br>
-            🎁 Bono Exclusivo: 100 Patrones Premium en Español (Valorado en $30.00)</p>
+            <p>ðŸ“– Libro Digital de Crochet para Principiantes (Valorado en $17.00)<br>
+            ðŸŽ Bono Exclusivo: 100 Patrones Premium en EspaÃ±ol (Valorado en $30.00)</p>
             
             <img src="mockup.png" alt="Libro Digital de Crochet para Principiantes y 100 Patrones" style="width: 100%; max-width: 700px; height: auto; margin: 1.5rem auto; display: block;">
 
             <div class="price-container" style="border-color: var(--trust-blue);">
                 <p>Valor Total: <span class="price-original" style="margin-left: 5px;">~~$47.00~~</span></p>
-                <p style="font-size: 1.2rem; margin-top: 10px;">Llévatelo HOY por solo:</p>
+                <p style="font-size: 1.2rem; margin-top: 10px;">LlÃ©vatelo HOY por solo:</p>
                 <span class="price-today">$9.99 USD</span>
-                <p style="color: #64748B; font-size: 0.9rem;">(Solo por las próximas horas)</p>
+                <p style="color: #64748B; font-size: 0.9rem;">(Solo por las prÃ³ximas horas)</p>
             </div>
 
             <a href="#link-de-pago" class="checkout-link">
-                <button class="btn-cta">👉 ¡Sí, Quiero Mi Libro y Mis 100 Patrones por $9.99!</button>
+                <button class="btn-cta">Â¡SÃ, QUIERO MI LIBRO Y MIS 100 PATRONES POR $9.99!</button>
             </a>
-            <div class="secure-text">🔒 Pago 100% Seguro. Acceso Inmediato.</div>
+            <div class="secure-text">ðŸ”’ Pago 100% Seguro. Acceso Inmediato.</div>
         </section>
 
         <section>
             <h2>Preguntas Frecuentes:</h2>
             <ul class="bullet-list">
-                <li><span>🤔</span> <strong>"¿Necesito comprar lanas caras o agujas especiales para empezar?"</strong><br>
-                ¡Para nada! El libro está diseñado para que empieces con los materiales más básicos que encuentres en cualquier mercería local. De hecho, te enseñamos qué tipo de hilo económico es el mejor para practicar sin frustrarte.</li>
+                <li><span>ðŸ¤”</span> <strong>"Â¿Necesito comprar lanas caras o agujas especiales para empezar?"</strong><br>
+                Â¡Para nada! El libro estÃ¡ diseÃ±ado para que empieces con los materiales mÃ¡s bÃ¡sicos que encuentres en cualquier mercerÃ­a local. De hecho, te enseÃ±amos quÃ© tipo de hilo econÃ³mico es el mejor para practicar sin frustrarte.</li>
                 
-                <li><span>🤔</span> <strong>"¿Este método me sirve si soy zurda?"</strong><br>
-                ¡Absolutamente! Las bases de lectura de patrones, conteo de puntos y tensión se aplican exactamente igual; solo tienes que espejar el movimiento de tus manos. El tejido quedará igual de hermoso.</li>
+                <li><span>ðŸ¤”</span> <strong>"Â¿Este mÃ©todo me sirve si soy zurda?"</strong><br>
+                Â¡Absolutamente! Las bases de lectura de patrones, conteo de puntos y tensiÃ³n se aplican exactamente igual; solo tienes que espejar el movimiento de tus manos. El tejido quedarÃ¡ igual de hermoso.</li>
                 
-                <li><span>🤔</span> <strong>"¿Cómo y cuándo recibo el libro y los patrones?"</strong><br>
-                El acceso es inmediato. Apenas confirmes tu pago de $9.99, recibirás un correo electrónico seguro con los enlaces para descargar tu Libro Digital y la Biblioteca de 100 Patrones directamente en tu celular, tablet o computadora. ¡Podrás empezar a leerlos en menos de 2 minutos!</li>
+                <li><span>ðŸ¤”</span> <strong>"Â¿CÃ³mo y cuÃ¡ndo recibo el libro y los patrones?"</strong><br>
+                El acceso es inmediato. Apenas confirmes tu pago de $9.99, recibirÃ¡s un correo electrÃ³nico seguro con los enlaces para descargar tu Libro Digital y la Biblioteca de 100 Patrones directamente en tu celular, tablet o computadora. Â¡PodrÃ¡s empezar a leerlos en menos de 2 minutos!</li>
             </ul>
 
             <a href="#link-de-pago" class="checkout-link">
-                <button class="btn-cta">👉 ¡Completar Mi Pedido Ahora!</button>
+                <button class="btn-cta">ðŸ‘‰ Â¡Completar Mi Pedido Ahora!</button>
             </a>
-            <div class="secure-text">🔒 Pago 100% Seguro. Acceso Inmediato.</div>
+            <div class="secure-text">ðŸ”’ Pago 100% Seguro. Acceso Inmediato.</div>
         </section>
 
         <footer class="text-center" style="margin-top: 3rem; color: #94A3B8; font-size: 0.85rem;">
-            <p>© 2026 @tucrochetahora. Todos los derechos reservados.</p>
+            <p>Â© 2026 @tucrochetahora. Todos los derechos reservados.</p>
         </footer>
 
     </div>
