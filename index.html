@@ -138,16 +138,6 @@
             border-radius: 20px;
         }
 
-        /* Caja de precios en el resumen */
-        .price-container {
-            margin: 1.5rem 0;
-            background: #fff;
-            padding: 1.5rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            border: 1px solid #E2E8F0;
-        }
-
         /* Botones y Animacion */
         .btn-cta {
             display: block;
@@ -239,6 +229,130 @@
 
         .checkout-link { text-decoration: none; }
 
+        /* === RESUMEN DE PEDIDO === */
+        .order-summary-section {
+            background-color: var(--hero-bg);
+            padding: 2.5rem 1rem;
+            margin: 2rem 0;
+        }
+
+        .order-summary-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 2rem;
+            max-width: 480px;
+            margin: 0 auto;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .order-summary-card h2 {
+            color: var(--headline-blue);
+            font-size: 1.7rem;
+            font-weight: 900;
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+        }
+
+        .order-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 0.9rem 0;
+            border-bottom: 1px dashed #D1D5DB;
+            gap: 10px;
+        }
+
+        .order-item:last-of-type {
+            border-bottom: none;
+        }
+
+        .order-item-name {
+            font-size: 0.95rem;
+            color: #334155;
+            flex: 1;
+        }
+
+        .order-item-name .item-emoji {
+            margin-right: 4px;
+        }
+
+        .order-item-price {
+            font-size: 0.95rem;
+            color: #475569;
+            text-align: right;
+            white-space: nowrap;
+        }
+
+        .order-total-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+            padding-top: 0.5rem;
+        }
+
+        .order-total-label {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--text-dark);
+        }
+
+        .order-total-price {
+            text-decoration: line-through;
+            color: #EF4444;
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .order-cta-block {
+            text-align: center;
+            margin-top: 1.5rem;
+        }
+
+        .order-cta-block .carry-label {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.2rem;
+        }
+
+        .order-cta-block .urgency-note {
+            font-size: 0.9rem;
+            color: var(--headline-green);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .big-price {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: 3px;
+            margin: 0.5rem 0 0.2rem;
+        }
+
+        .big-price .dollar-sign {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--text-dark);
+        }
+
+        .big-price .amount {
+            font-size: 4.5rem;
+            font-weight: 900;
+            color: var(--text-dark);
+            line-height: 1;
+        }
+
+        .big-price .cents-currency {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            align-self: flex-end;
+            margin-bottom: 0.5rem;
+        }
+
         /* Media Query para Escritorio */
         @media (min-width: 768px) {
             h1 { font-size: 2.8rem; }
@@ -285,7 +399,7 @@
             <p>Llevaba d&#237;as intentando tejer un mu&#241;eco para un regalo muy especial. Segu&#237; cada paso de un video en YouTube que iba a mil por hora. Destej&#237; tantas veces que el hilo termin&#243; &#225;spero y deshilachado. Al final, cuando logr&#233; rellenarlo, se le ve&#237;an huecos horribles y la cabeza le qued&#243; torcida. Sent&#237; un nudo en el est&#243;mago, guard&#233; todas mis lanas en un caj&#243;n y pens&#233; en silencio: <em>"Definitivamente soy demasiado torpe para esto. El crochet simplemente no es para m&#237;".</em></p>
 
             <p><strong>Pero d&#233;jame decirte la verdad: El problema nunca fuiste t&#250;.</strong></p>
-            <p>Son esos "gur&#250;s" de YouTube que editan los videos para que se vean est&#233;ticos, salt&#225;ndose los pasos cruciales. Son las revistas y los dise&#241;adores elitistas que escriben patrones llenos de jeroglificos incomprensibles. Pareciera que disfrutan haci&#233;ndote sentir torpe a prop&#243;sito.</p>
+            <p>Son esos "gur&#250;s" de YouTube que editan los videos para que se vean est&#233;ticos, salt&#225;ndose los pasos cruciales. Son las revistas y los dise&#241;adores elitistas que escriben patrones llenos de jeroglí&#65039;ficos incomprensibles. Pareciera que disfrutan haci&#233;ndote sentir torpe a prop&#243;sito.</p>
             <p class="highlight">Nadie se ha sentado a ense&#241;arte el por qu&#233; de cada punto en un idioma humano.</p>
         </section>
 
@@ -314,7 +428,7 @@
         <section class="section-box">
             <h2>Lo que descubrir&#225;s en el interior de tu libro:</h2>
             <ul class="bullet-list">
-                <li><span>&#10024;</span><strong>El "Truco del Traductor":</strong> C&#243;mo leer cualquier gr&#225;fico o patr&#243;n escrito de un vistazo, sin sentir que est&#225;s descifrando jeroglificos ni memorizar listas interminables de abreviaturas.</li>
+                <li><span>&#10024;</span><strong>El "Truco del Traductor":</strong> C&#243;mo leer cualquier gr&#225;fico o patr&#243;n escrito de un vistazo, sin sentir que est&#225;s descifrando jeroglí&#65039;ficos ni memorizar listas interminables de abreviaturas.</li>
                 <li><span>&#10024;</span><strong>La "Regla de Oro" de la Tensi&#243;n:</strong> El ajuste milim&#233;trico e infalible para evitar para siempre los bordes irregulares o los tejidos que se encogen misteriosamente.</li>
                 <li><span>&#10024;</span><strong>El Movimiento Invisible:</strong> El punto de anclaje secreto que las expertas ocultan y que transforma hasta la lana m&#225;s barata del supermercado en un tejido de aspecto premium y profesional.</li>
             </ul>
@@ -328,37 +442,17 @@
         <section class="section-box guarantee-box">
             <h2 style="color: var(--accent-gold); margin-top: 0;">&#128737;&#65039; Garant&#237;a Blindada de 7 D&#237;as: "Tejes o Te Devuelvo Tu Dinero"</h2>
             <p>Estamos tan seguros de que este libro es el eslab&#243;n perdido en tu aprendizaje, que asumimos el 100% del riesgo.</p>
-            <p>Descarga el libro hoy. Si implementas el paso a paso y sientes que sigues sin entender los puntos, envíanos un correo en los primeros 7 d&#237;as. Te devolveremos hasta el &#250;ltimo centavo de tus $9.99 sin hacerte ninguna pregunta, y te quedas con los materiales. T&#250; no arriesgas absolutamente nada.</p>
+            <p>Descarga el libro hoy. Si implementas el paso a paso y sientes que sigues sin entender los puntos, env&#237;anos un correo en los primeros 7 d&#237;as. Te devolveremos hasta el &#250;ltimo centavo de tus $9.99 sin hacerte ninguna pregunta, y te quedas con los materiales. T&#250; no arriesgas absolutamente nada.</p>
         </section>
 
         <section>
             <h2>Ha llegado el momento de tomar una decisi&#243;n. Tienes 3 opciones:</h2>
             <ul class="bullet-list">
                 <li><span>&#128308;</span> <strong>Opci&#243;n 1: No hacer nada.</strong> Seguir guardando lanas en el caj&#243;n, acumulando patrones hermosos que nunca terminan bien y sintiendo que el crochet simplemente "no se te da".</li>
-                <li><span>&#128993;</span> <strong>Opci&#243;n 2: Intentar adivinar.</strong> Seguir perdiendo horas en videos que van demasiado r&#225;pido, frustrandote y desperdiciando material caro.</li>
+                <li><span>&#128993;</span> <strong>Opci&#243;n 2: Intentar adivinar.</strong> Seguir perdiendo horas en videos que van demasiado r&#225;pido, frustr&#225;ndote y desperdiciando material caro.</li>
                 <li><span>&#128994;</span> <strong class="highlight">Opci&#243;n 3: El camino sin riesgo.</strong> Invertir solo $9.99 hoy, unirte a la comunidad de @tucrochetahora y empezar a tejer proyectos impecables esta misma noche con un m&#233;todo probado y 100% en espa&#241;ol.</li>
             </ul>
             <p style="margin-top: 2rem; font-style: italic;">Imagina la sensaci&#243;n de terminar tu primer amigurumi perfecto. Imagina la sonrisa en tu rostro cuando mires los puntos parejos y sin un solo hueco. Imagina el orgullo cuando tus amigas lo vean y te pregunten asombradas: "&#191;De verdad hiciste esto t&#250; sola?". Esa sensaci&#243;n de paz y logro est&#225; a un solo clic de distancia.</p>
-        </section>
-
-        <section class="section-box text-center" style="background-color: #F1F5F9;">
-            <h2>Resumen de tu Pedido:</h2>
-            <p>&#128214; Libro Digital de Crochet para Principiantes (Valorado en $17.00)<br>
-            &#127873; Bono Exclusivo: 100 Patrones Premium en Espa&#241;ol (Valorado en $30.00)</p>
-
-            <img src="mockup.png" alt="Libro Digital de Crochet para Principiantes y 100 Patrones" style="width: 100%; max-width: 700px; height: auto; margin: 1.5rem auto; display: block;">
-
-            <div class="price-container" style="border-color: var(--trust-blue);">
-                <p>Valor Total: <span class="price-original" style="margin-left: 5px;">$47.00</span></p>
-                <p style="font-size: 1.2rem; margin-top: 10px;">Ll&#233;vatelo HOY por solo:</p>
-                <p style="font-size: 2.5rem; font-weight: 900; color: #16A34A; margin: 5px 0;">$9.99 USD</p>
-                <p style="color: #64748B; font-size: 0.9rem;">(Solo por las pr&#243;ximas horas)</p>
-            </div>
-
-            <a href="#link-de-pago" class="checkout-link">
-                <button class="btn-cta">&#161;S&#205;, QUIERO MI LIBRO Y MIS 100 PATRONES POR $9.99!</button>
-            </a>
-            <div class="secure-text">&#128274; Pago 100% Seguro. Acceso Inmediato.</div>
         </section>
 
         <section>
@@ -373,17 +467,48 @@
                 <li><span>&#129300;</span> <strong>"&#191;C&#243;mo y cu&#225;ndo recibo el libro y los patrones?"</strong><br>
                 El acceso es inmediato. Apenas confirmes tu pago de $9.99, recibir&#225;s un correo electr&#243;nico seguro con los enlaces para descargar tu Libro Digital y la Biblioteca de 100 Patrones directamente en tu celular, tablet o computadora. &#161;Podr&#225;s empezar a leerlos en menos de 2 minutos!</li>
             </ul>
-
-            <a href="#link-de-pago" class="checkout-link">
-                <button class="btn-cta">&#161;COMPLETAR MI PEDIDO AHORA!</button>
-            </a>
-            <div class="secure-text">&#128274; Pago 100% Seguro. Acceso Inmediato.</div>
         </section>
 
-        <footer class="text-center" style="margin-top: 3rem; color: #94A3B8; font-size: 0.85rem;">
+        <footer class="text-center" style="margin-top: 1rem; color: #94A3B8; font-size: 0.85rem; padding-bottom: 1rem;">
             <p>&#169; 2026 @tucrochetahora. Todos los derechos reservados.</p>
         </footer>
 
+    </div>
+
+    <!-- Resumen de Pedido -->
+    <div class="order-summary-section">
+        <div class="order-summary-card">
+            <h2>Resumen de tu Pedido</h2>
+
+            <div class="order-item">
+                <div class="order-item-name">&#128214; Libro Digital de Crochet para Principiantes</div>
+                <div class="order-item-price">(Valorado en $17.00)</div>
+            </div>
+            <div class="order-item">
+                <div class="order-item-name"><span class="item-emoji">&#127873;</span> <strong>Bono Exclusivo: 100 Patrones en Espa&#241;ol</strong></div>
+                <div class="order-item-price">(Valorado en $30.00)</div>
+            </div>
+
+            <div class="order-total-row">
+                <span class="order-total-label">Valor Total:</span>
+                <span class="order-total-price">~~$47.00~~</span>
+            </div>
+
+            <div class="order-cta-block">
+                <p class="carry-label">Ll&#233;vatelo <strong>HOY</strong> por solo:</p>
+                <p class="urgency-note">(Solo por las pr&#243;ximas horas)</p>
+                <div class="big-price">
+                    <span class="dollar-sign">$</span>
+                    <span class="amount">9</span>
+                    <span class="cents-currency">.99 USD</span>
+                </div>
+
+                <a href="#link-de-pago" class="checkout-link">
+                    <button class="btn-cta">&#161;S&#205;, QUIERO MI LIBRO Y MIS 100 PATRONES POR $9.99!</button>
+                </a>
+                <div class="secure-text">&#128274; Pago 100% Seguro. Acceso Inmediato.</div>
+            </div>
+        </div>
     </div>
 
     <script>
