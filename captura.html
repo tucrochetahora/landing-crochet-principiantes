@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patrón Gratis: Granny Square Perfecto | @tucrochetahora</title>
+    <style>
+        :root { --primary-bg: #F8FAFC; --text-main: #334155; --text-dark: #0F172A; --cta-color: #F97316; --trust-blue: #1E3A8A; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+        body { background-color: var(--primary-bg); color: var(--text-main); display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: 20px; }
+        .squeeze-container { background: white; padding: 2.5rem; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.08); max-width: 600px; text-align: center; }
+        h1 { color: var(--trust-blue); font-size: 2.2rem; margin-bottom: 1rem; line-height: 1.2; font-weight: 800; }
+        p { margin-bottom: 1.8rem; font-size: 1.1rem; line-height: 1.5; color: #475569; }
+        input { width: 100%; padding: 16px; margin-bottom: 15px; border: 1px solid #CBD5E1; border-radius: 8px; font-size: 1rem; outline: none; }
+        input:focus { border-color: var(--trust-blue); }
+        .btn-cta { width: 100%; background: var(--cta-color); color: white; border: none; padding: 18px; font-size: 1.2rem; font-weight: bold; border-radius: 8px; cursor: pointer; transition: transform 0.2s, background 0.3s; box-shadow: 0 4px 15px rgba(249, 115, 22, 0.4); }
+        .btn-cta:hover { transform: scale(1.02); background: #EA580C; }
+        .secure { font-size: 0.85rem; color: #64748B; margin-top: 15px; display: flex; align-items: center; justify-content: center; gap: 5px; }
+        .badge { background: #D1FAE5; color: #065F46; padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: bold; display: inline-block; margin-bottom: 15px; letter-spacing: 0.5px; }
+    </style>
+</head>
+<body>
+    <div class="squeeze-container">
+        <div class="badge">REGALO EXCLUSIVO</div>
+        <h1>¿Quieres Tejer un Granny Square Perfecto y Sin Errores en Tiempo Récord?</h1>
+        <p>Descarga <strong>gratis</strong> mi patrón paso a paso (con el truco exacto para que los bordes nunca se tuerzan) y empieza a crear mantas o tops increíbles hoy mismo.</p>
+        
+        <form action="index.html" method="GET">
+            <input type="text" name="nombre" placeholder="Tu primer nombre" required>
+            <input type="email" name="correo" placeholder="Tu mejor correo electrónico" required>
+            <button type="submit" class="btn-cta">👉 ¡Sí, Envíame el Patrón Gratis!</button>
+        </form>
+        
+        <div class="secure">🔒 Tu información está 100% segura. Cero spam.</div>
+    </div>
+</body>
+</html>
