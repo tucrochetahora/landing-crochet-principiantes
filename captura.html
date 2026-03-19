@@ -25,10 +25,16 @@
         <h1>¿Quieres Tejer un Granny Square Perfecto y Sin Errores en Tiempo Récord?</h1>
         <p>Descarga <strong>gratis</strong> mi patrón paso a paso (con el truco exacto para que los bordes nunca se tuerzan) y empieza a crear mantas o tops increíbles hoy mismo.</p>
         
-        <form action="index.html" method="GET">
-            <input type="text" name="nombre" placeholder="Tu primer nombre" required>
-            <input type="email" name="correo" placeholder="Tu mejor correo electrónico" required>
+        <form id="sib-form" method="POST" action="https://c3ce3d7e.sibforms.com/serve/MUIFAMHXASCOJ2m1u3s02EPUwz941akbyjN_YppIsL7U-Tw6H1I5FvdDMDJrwkyufMNz2euXRwGawqpNXvGGPTT3jzK7OnjcU9yEW1MGQW891v0oiUXUtoHTfJa4PeKJKczoIlD4N6irUzTuoqrvQtYOB2XMngOqvLXxMaXlszfQ-q4Kj2-tLebdAMOMRQBaFTi-IFgDjBZIDgWofA==">
+            
+            <input type="text" id="NOMBRE" name="NOMBRE" placeholder="Tu primer nombre" required>
+            
+            <input type="email" id="EMAIL" name="EMAIL" placeholder="Tu mejor correo electrónico" required>
+            
             <button type="submit" class="btn-cta">👉 ¡Sí, Envíame el Patrón Gratis!</button>
+
+            <input type="text" name="email_address_check" value="" style="display:none;">
+            <input type="hidden" name="locale" value="es">
         </form>
         
         <div class="secure">🔒 Tu información está 100% segura. Cero spam.</div>
