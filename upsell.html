@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Felicidades por tu compra!</title>
+    <style>
+        :root {
+            --naranja-creatividad: #FF6B35;
+            --verde-exito: #28A745;
+            --azul-confianza: #007BFF;
+            --rojo-alerta: #D84315;
+            --fondo-claro: #F8F9FA;
+            --texto-oscuro: #2C3E50;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--fondo-claro);
+            color: var(--texto-oscuro);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Encabezado */
+        header {
+            text-align: center;
+            margin: 30px 0 20px;
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            color: var(--texto-oscuro);
+        }
+
+        /* Barra de Confirmación */
+        .success-bar {
+            background-color: var(--verde-exito);
+            color: white;
+            text-align: center;
+            padding: 15px 20px;
+            border-radius: 10px;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        /* Gancho */
+        .gancho-section {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .gancho-section h2 {
+            color: var(--rojo-alerta);
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+        }
+
+        .gancho-section p {
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        /* Tarjetas de Upsell - Estructura */
+        .upsell-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        @media (min-width: 600px) {
+            .upsell-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        /* Tarjetas */
+        .card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.05);
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.1);
+        }
+
+        .card.vip {
+            border-top: 6px solid var(--naranja-creatividad);
+        }
+
+        .card.alternativa {
+            border-top: 6px solid var(--azul-confianza);
+        }
+
+        .card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            margin-bottom: 25px;
+            flex-grow: 1;
+        }
+
+        /* Botones */
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            border-radius: 10px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: transform 0.2s, box-shadow 0.2s, filter 0.2s;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            filter: brightness(1.1);
+        }
+
+        .btn-vip {
+            background-color: var(--naranja-creatividad);
+        }
+
+        .btn-alt {
+            background-color: var(--azul-confianza);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            color: #7F8C8D;
+            font-size: 0.9rem;
+            margin-top: 20px;
+            padding-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Encabezado -->
+        <header>
+            <h1>¡Felicidades por tu compra en @tucrochetahora! 🎉</h1>
+        </header>
+
+        <!-- Barra de Confirmación -->
+        <div class="success-bar">
+            ✅ PAGO EXITOSO. Las guías de crochet de $9.99 ya están confirmadas. El enlace de acceso acaba de ser enviado a tu correo electrónico.
+        </div>
+
+        <!-- Gancho de Atención -->
+        <div class="gancho-section">
+            <h2>🛑 ¡ESPERA! Tu pedido no está completo...</h2>
+            <p>Lee esto antes de ir a tu bandeja de entrada:</p>
+        </div>
+
+        <!-- Tarjetas de Upsell -->
+        <div class="upsell-grid">
+            
+            <!-- Tarjeta VIP -->
+            <div class="card vip">
+                <h3 style="color: var(--naranja-creatividad);">Opción VIP: Domina el Crochet en Video</h3>
+                <p>Ya tienes los patrones escritos, pero si quieres ver el paso a paso en video y tejer sin equivocarte, este programa de $50 es para ti.</p>
+                <a href="#" class="btn btn-vip">👉 Ver Curso en Video</a>
+            </div>
+
+            <!-- Tarjeta Alternativa -->
+            <div class="card alternativa">
+                <h3 style="color: var(--azul-confianza);">Inspiración Infinita: 1.000 Patrones</h3>
+                <p>Si prefieres tener proyectos para toda la vida, llévate esta biblioteca premium masiva por solo $24.</p>
+                <a href="#" class="btn btn-alt">📚 Ver Biblioteca de Patrones</a>
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            Garantía de Satisfacción. Pago 100% Seguro.
+        </footer>
+    </div>
+</body>
+</html>
