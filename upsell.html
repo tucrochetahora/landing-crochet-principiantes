@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>¡Felicidades por tu compra!</title>
+    <title>¡Felicidades por tu compra! - Oferta Exclusiva</title>
     <style>
         :root {
             --naranja-creatividad: #FF6B35;
@@ -57,7 +57,7 @@
             margin-bottom: 30px;
         }
 
-        /* Gancho */
+        /* Gancho y Urgencia */
         .gancho-section {
             text-align: center;
             margin-bottom: 40px;
@@ -72,6 +72,39 @@
         .gancho-section p {
             font-size: 1.1rem;
             font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .urgency-text {
+            color: var(--texto-oscuro);
+            font-weight: bold;
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+
+        .countdown-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 15px;
+        }
+
+        .countdown-timer {
+            background-color: var(--rojo-alerta);
+            color: white;
+            font-size: 2.2rem;
+            font-weight: 900;
+            padding: 10px 25px;
+            border-radius: 8px;
+            letter-spacing: 2px;
+            box-shadow: 0 4px 10px rgba(216, 67, 21, 0.3);
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
         }
 
         /* Tarjetas de Upsell - Estructura */
@@ -79,7 +112,7 @@
             display: grid;
             grid-template-columns: 1fr;
             gap: 30px;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
 
         @media (min-width: 600px) {
@@ -119,8 +152,37 @@
         }
 
         .card p {
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             flex-grow: 1;
+        }
+
+        /* Precios */
+        .price-block {
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .price-regular {
+            text-decoration: line-through;
+            color: #7F8C8D;
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+
+        .price-today {
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: var(--texto-oscuro);
+        }
+
+        .card.vip .price-today {
+            color: var(--naranja-creatividad);
+        }
+        
+        .card.alternativa .price-today {
+            color: var(--azul-confianza);
         }
 
         /* Botones */
@@ -150,12 +212,29 @@
             background-color: var(--azul-confianza);
         }
 
+        /* Vía de Escape */
+        .escape-link-container {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .escape-link {
+            color: #95A5A6;
+            font-size: 0.85rem;
+            text-decoration: underline;
+            transition: color 0.2s;
+        }
+
+        .escape-link:hover {
+            color: #7F8C8D;
+        }
+
         /* Footer */
         footer {
             text-align: center;
             color: #7F8C8D;
             font-size: 0.9rem;
-            margin-top: 20px;
+            margin-top: 10px;
             padding-bottom: 30px;
         }
     </style>
@@ -172,10 +251,14 @@
             ✅ PAGO EXITOSO. Las guías de crochet de $9.99 ya están confirmadas. El enlace de acceso acaba de ser enviado a tu correo electrónico.
         </div>
 
-        <!-- Gancho de Atención -->
+        <!-- Gancho de Atención + SCARCITY -->
         <div class="gancho-section">
             <h2>🛑 ¡ESPERA! Tu pedido no está completo...</h2>
             <p>Lee esto antes de ir a tu bandeja de entrada:</p>
+            <p class="urgency-text">Atención: Esta oferta exclusiva no volverá a mostrarse.</p>
+            <div class="countdown-container">
+                <div class="countdown-timer" id="timer">15:00</div>
+            </div>
         </div>
 
         <!-- Tarjetas de Upsell -->
@@ -185,6 +268,13 @@
             <div class="card vip">
                 <h3 style="color: var(--naranja-creatividad);">Opción VIP: Domina el Crochet en Video</h3>
                 <p>Ya tienes los patrones escritos, pero si quieres ver el paso a paso en video y tejer sin equivocarte, este programa de $50 es para ti.</p>
+                
+                <!-- PRICE ANCHORING -->
+                <div class="price-block">
+                    <span class="price-regular">Precio regular: $100</span>
+                    <span class="price-today">Hoy solo: $50</span>
+                </div>
+
                 <a href="#" class="btn btn-vip">👉 Ver Curso en Video</a>
             </div>
 
@@ -192,9 +282,21 @@
             <div class="card alternativa">
                 <h3 style="color: var(--azul-confianza);">Inspiración Infinita: 1.000 Patrones</h3>
                 <p>Si prefieres tener proyectos para toda la vida, llévate esta biblioteca premium masiva por solo $24.</p>
+                
+                <!-- PRICE ANCHORING -->
+                <div class="price-block">
+                    <span class="price-regular">Precio regular: $48</span>
+                    <span class="price-today">Hoy solo: $24</span>
+                </div>
+
                 <a href="#" class="btn btn-alt">📚 Ver Biblioteca de Patrones</a>
             </div>
 
+        </div>
+
+        <!-- VÍA DE ESCAPE (Fricción Reducida) -->
+        <div class="escape-link-container">
+            <a href="#" class="escape-link">No gracias, por ahora solo quiero acceder a mis patrones base de $9.99.</a>
         </div>
 
         <!-- Footer -->
@@ -202,5 +304,33 @@
             Garantía de Satisfacción. Pago 100% Seguro.
         </footer>
     </div>
+
+    <!-- Script del Contador Regresivo -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Configurar el tiempo en minutos (15 minutos)
+            let timeInMinutes = 15;
+            let timeInSeconds = timeInMinutes * 60;
+            const timerDisplay = document.getElementById("timer");
+
+            const interval = setInterval(function() {
+                let minutes = Math.floor(timeInSeconds / 60);
+                let seconds = timeInSeconds % 60;
+
+                // Formatear con ceros a la izquierda
+                let formattedMinutes = minutes < 10 ? "0" + minutes : minutes;
+                let formattedSeconds = seconds < 10 ? "0" + seconds : seconds;
+
+                timerDisplay.textContent = formattedMinutes + ":" + formattedSeconds;
+
+                if (timeInSeconds <= 0) {
+                    clearInterval(interval);
+                    timerDisplay.textContent = "00:00";
+                } else {
+                    timeInSeconds--;
+                }
+            }, 1000);
+        });
+    </script>
 </body>
 </html>
