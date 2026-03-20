@@ -131,6 +131,7 @@
             flex-direction: column;
             text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative; /* Añadido para posicionar el badge */
         }
 
         .card:hover {
@@ -148,12 +149,65 @@
 
         .card h3 {
             font-size: 1.3rem;
+            margin-bottom: 5px; /* Reducido para acercar el subtitulo */
+        }
+        
+        .card .subtitle {
+            font-style: italic;
+            color: #475569;
+            font-size: 0.95rem;
             margin-bottom: 15px;
         }
 
-        .card p {
+        .card p.desc {
             margin-bottom: 20px;
             flex-grow: 1;
+        }
+
+        /* Elementos específicos de Tarjeta VIP */
+        .badge {
+            position: absolute;
+            top: -12px;
+            right: -10px;
+            background-color: var(--naranja-creatividad);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: bold;
+            padding: 5px 12px;
+            border-radius: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+            transform: rotate(3deg);
+            z-index: 2;
+        }
+
+        .benefits-list {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 20px;
+            font-size: 0.92rem;
+            color: var(--texto-oscuro);
+            line-height: 1.4;
+            flex-grow: 1; /* Ocupa el espacio vacio para que ambas tarjetas sean del mismo tamaño */
+        }
+
+        .benefits-list li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .value-stack {
+            background-color: #FFF3E0;
+            border: 2px dashed var(--naranja-creatividad);
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: var(--naranja-creatividad);
+            margin-bottom: 25px;
+            text-align: center;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
         }
 
         /* Precios */
@@ -167,29 +221,29 @@
         .price-regular {
             text-decoration: line-through;
             color: #7F8C8D;
-            font-size: 1rem;
+            font-size: 0.95rem;
             margin-bottom: 5px;
         }
 
         .price-today {
-            font-size: 1.6rem;
+            font-size: 1.7rem;
             font-weight: 900;
             color: var(--texto-oscuro);
         }
 
         .card.vip .price-today {
-            color: var(--naranja-creatividad);
+            color: var(--texto-oscuro);
         }
         
         .card.alternativa .price-today {
-            color: var(--azul-confianza);
+            color: var(--texto-oscuro);
         }
 
         /* Botones */
         .btn {
             display: block;
             width: 100%;
-            padding: 15px;
+            padding: 16px;
             border-radius: 10px;
             text-decoration: none;
             color: white;
@@ -264,24 +318,37 @@
         <!-- Tarjetas de Upsell -->
         <div class="upsell-grid">
             
-            <!-- Tarjeta VIP -->
+            <!-- Tarjeta VIP (Mini-Pitch Irresistible) -->
             <div class="card vip">
-                <h3 style="color: var(--naranja-creatividad);">Opción VIP: Domina el Crochet en Video</h3>
-                <p>Ya tienes los patrones escritos, pero si quieres ver el paso a paso en video y tejer sin equivocarte, este programa de $50 es para ti.</p>
+                <!-- Banda Destacado -->
+                <div class="badge">🔥 OFERTA ESTRELLA</div>
+
+                <h3 style="color: var(--naranja-creatividad);">Opción VIP: Crea, Emprende y Triunfa con Bolsos a Crochet</h3>
+                <p class="subtitle">"Convierte tu talento en ingresos reales en menos de 14 días."</p>
+                
+                <ul class="benefits-list">
+                    <li><span>✅</span> Más de 176 clases paso a paso (Bolsos y Accesorios).</li>
+                    <li><span>✅</span> Domina técnicas profesionales y acabados perfectos.</li>
+                    <li><span>✅</span> Estrategias de Marketing Digital para vender en redes.</li>
+                </ul>
+
+                <div class="value-stack">
+                    🎁 INCLUYE 12 BONUS HOY: Finanzas, Amigurumis, Masoterapia, Proveedores y más.
+                </div>
                 
                 <!-- PRICE ANCHORING -->
                 <div class="price-block">
-                    <span class="price-regular">Precio regular: $100</span>
-                    <span class="price-today">Hoy solo: $50</span>
+                    <span class="price-regular">Valor real del programa + Bonos: $250 USD</span>
+                    <span class="price-today">Hoy solo: $50 USD</span>
                 </div>
 
-                <a href="#" class="btn btn-vip">👉 Ver Curso en Video</a>
+                <a href="#" class="btn btn-vip">👉 ¡Quiero Empezar Mi Negocio Hoy!</a>
             </div>
 
             <!-- Tarjeta Alternativa -->
             <div class="card alternativa">
                 <h3 style="color: var(--azul-confianza);">Inspiración Infinita: 1.000 Patrones</h3>
-                <p>Si prefieres tener proyectos para toda la vida, llévate esta biblioteca premium masiva por solo $24.</p>
+                <p class="desc">Si prefieres tener proyectos para toda la vida, llévate esta biblioteca premium masiva por solo $24.</p>
                 
                 <!-- PRICE ANCHORING -->
                 <div class="price-block">
