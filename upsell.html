@@ -34,7 +34,6 @@
             padding: 20px;
         }
 
-        /* Encabezado */
         header {
             text-align: center;
             margin: 30px 0 20px;
@@ -45,7 +44,6 @@
             color: var(--texto-oscuro);
         }
 
-        /* Barra de Confirmación */
         .success-bar {
             background-color: var(--verde-exito);
             color: white;
@@ -57,7 +55,6 @@
             margin-bottom: 30px;
         }
 
-        /* Gancho y Urgencia */
         .gancho-section {
             text-align: center;
             margin-bottom: 40px;
@@ -107,7 +104,6 @@
             100% { transform: scale(1); }
         }
 
-        /* Tarjetas de Upsell - Estructura */
         .upsell-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -121,7 +117,6 @@
             }
         }
 
-        /* Tarjetas */
         .card {
             background: white;
             border-radius: 10px;
@@ -131,7 +126,7 @@
             flex-direction: column;
             text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative; /* Para posicionar el badge */
+            position: relative;
         }
 
         .card:hover {
@@ -159,7 +154,6 @@
             margin-bottom: 15px;
         }
 
-        /* Badges Compartidos */
         .badge {
             position: absolute;
             top: -12px;
@@ -173,17 +167,9 @@
             z-index: 2;
         }
 
-        .badge-vip {
-            background-color: var(--naranja-creatividad);
-            transform: rotate(3deg);
-        }
+        .badge-vip { background-color: var(--naranja-creatividad); transform: rotate(3deg); }
+        .badge-alt { background-color: var(--azul-confianza); transform: rotate(-3deg); }
 
-        .badge-alt {
-            background-color: var(--azul-confianza);
-            transform: rotate(-3deg);
-        }
-
-        /* Listas de Beneficios Compartidas */
         .benefits-list {
             list-style: none;
             text-align: left;
@@ -191,7 +177,7 @@
             font-size: 0.92rem;
             color: var(--texto-oscuro);
             line-height: 1.4;
-            flex-grow: 1; /* Ocupa el espacio vacio para igualar tamaño de tarjetas */
+            flex-grow: 1;
         }
 
         .benefits-list li {
@@ -201,7 +187,6 @@
             gap: 8px;
         }
 
-        /* Value Stacks Compartidos */
         .value-stack {
             padding: 15px;
             border-radius: 8px;
@@ -209,7 +194,6 @@
             font-weight: bold;
             margin-bottom: 25px;
             text-align: center;
-            box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
         }
 
         .value-stack-vip {
@@ -224,7 +208,6 @@
             color: var(--azul-confianza);
         }
 
-        /* Precios */
         .price-block {
             margin-bottom: 20px;
             display: flex;
@@ -245,7 +228,6 @@
             color: var(--texto-oscuro);
         }
 
-        /* Botones CTA */
         .btn {
             display: block;
             width: 100%;
@@ -264,32 +246,12 @@
             filter: brightness(1.1);
         }
 
-        .btn-vip {
-            background-color: var(--naranja-creatividad);
-        }
+        .btn-vip { background-color: var(--naranja-creatividad); }
+        .btn-alt { background-color: var(--azul-confianza); }
 
-        .btn-alt {
-            background-color: var(--azul-confianza);
-        }
+        .escape-link-container { text-align: center; margin-bottom: 40px; }
+        .escape-link { color: #95A5A6; font-size: 0.85rem; text-decoration: underline; }
 
-        /* Vía de Escape */
-        .escape-link-container {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .escape-link {
-            color: #95A5A6;
-            font-size: 0.85rem;
-            text-decoration: underline;
-            transition: color 0.2s;
-        }
-
-        .escape-link:hover {
-            color: #7F8C8D;
-        }
-
-        /* Footer */
         footer {
             text-align: center;
             color: #7F8C8D;
@@ -301,17 +263,14 @@
 </head>
 <body>
     <div class="container">
-        <!-- Encabezado -->
         <header>
             <h1>¡Felicidades por tu compra en @tucrochetahora! 🎉</h1>
         </header>
 
-        <!-- Barra de Confirmación -->
         <div class="success-bar">
-            ✅ PAGO EXITOSO. Las guías de crochet de $9.99 ya están confirmadas. El enlace de acceso acaba de ser enviado a tu correo electrónico.
+            ✅ PAGO EXITOSO. Las guías de crochet de $9.99 ya están confirmadas. El acceso fue enviado a tu correo.
         </div>
 
-        <!-- Gancho de Atención + SCARCITY -->
         <div class="gancho-section">
             <h2>🛑 ¡ESPERA! Tu pedido no está completo...</h2>
             <p>Lee esto antes de ir a tu bandeja de entrada:</p>
@@ -321,78 +280,67 @@
             </div>
         </div>
 
-        <!-- Tarjetas de Upsell -->
         <div class="upsell-grid">
             
-            <!-- TARJETA VIP (3 Avatares: Principiantes, Intermedios y Avanzados) -->
             <div class="card vip">
                 <div class="badge badge-vip">🔥 PROGRAMA COMPLETO</div>
-
-                <h3 style="color: var(--naranja-creatividad);">Opción VIP: Crea, Escala y Triunfa con Bolsos a Crochet</h3>
-                <p class="subtitle">"Desde tu primera puntada hasta técnicas avanzadas: domina el arte y convierte tu talento en un negocio rentable."</p>
+                <h3 style="color: var(--naranja-creatividad);">Crea, Escala y Triunfa con Bolsos a Crochet</h3>
+                <p class="subtitle">"Desde tu primera puntada hasta técnicas avanzadas: domina el arte y emprende."</p>
                 
                 <ul class="benefits-list">
-                    <li><span>✅</span> Para todos los niveles: De cero absoluto a técnicas maestras con trapillo.</li>
-                    <li><span>✅</span> Más de 176 clases en video para lograr diseños exclusivos y acabados perfectos.</li>
-                    <li><span>✅</span> Estrategias de Marketing Digital: Crea tu marca, calcula costos y vende sin parar.</li>
+                    <li>✅ Para todos los niveles: De cero a técnicas maestras con trapillo.</li>
+                    <li>✅ Más de 176 clases en video con acabados perfectos.</li>
+                    <li>✅ Estrategias de Marketing Digital: Crea tu marca y vende.</li>
                 </ul>
 
                 <div class="value-stack value-stack-vip">
-                    🎁 INCLUYE 12 BONUS HOY: Finanzas, Amigurumis, Proveedores, Masoterapia y más.
+                    🎁 INCLUYE 12 BONUS HOY: Finanzas, Amigurumis, Proveedores y más.
                 </div>
                 
-                <!-- PRICE ANCHORING -->
                 <div class="price-block">
-                    <span class="price-regular">Valor real del programa + 12 Bonos: $250 USD</span>
+                    <span class="price-regular">Valor real: $250 USD</span>
                     <span class="price-today">Hoy solo: $50 USD</span>
                 </div>
 
-                <a href="#" class="https://go.hotmart.com/O103351983S?ap=9140">👉 ¡Quiero el Programa Completo Hoy!</a>
+                <a href="https://go.hotmart.com/O103351983S?ap=9140" class="btn btn-vip">👉 ¡Quiero el Programa Completo!</a>
             </div>
 
-            <!-- TARJETA ALTERNATIVA -->
             <div class="card alternativa">
                 <div class="badge badge-alt">📚 BIBLIOTECA PREMIUM</div>
-
-                <h3 style="color: var(--azul-confianza);">Inspiración Infinita: Manual de +1000 Patrones</h3>
-                <p class="subtitle">"Teje tu camino al nirvana y despídete de buscar tutoriales sueltos en YouTube."</p>
+                <h3 style="color: var(--azul-confianza);">Inspiración Infinita: +1000 Patrones</h3>
+                <p class="subtitle">"Teje tu camino al nirvana y olvida buscar tutoriales sueltos."</p>
                 
                 <ul class="benefits-list">
-                    <li><span>✅</span> Más de 1.000 patrones: Bolsos, amigurumis, prendas y deco.</li>
-                    <li><span>✅</span> Diseños paso a paso con apoyo visual para todos los niveles.</li>
-                    <li><span>✅</span> Proyectos tan increíbles que harán llorar de envidia a las abuelitas.</li>
+                    <li>✅ +1.000 patrones: Bolsos, amigurumis, prendas y deco.</li>
+                    <li>✅ Diseños paso a paso con apoyo visual profesional.</li>
+                    <li>✅ Proyectos que harán llorar de envidia a las abuelitas.</li>
                 </ul>
 
                 <div class="value-stack value-stack-alt">
-                    🎁 BENEFICIO EXTRA: Satisfacción inmediata y cientos de horas de distracción garantizada para almas creativas.
+                    🎁 BENEFICIO EXTRA: Cientos de horas de distracción garantizada.
                 </div>
                 
-                <!-- PRICE ANCHORING -->
                 <div class="price-block">
-                    <span class="price-regular">Valor real de la biblioteca: $90.00 USD</span>
+                    <span class="price-regular">Valor real: $90.00 USD</span>
                     <span class="price-today">Hoy solo: $29.99 USD</span>
                 </div>
 
-                <a href="#" class="https://go.hotmart.com/G104781339E?ap=e9f3">📚 ¡Quiero Mi Manual de 1000 Patrones!</a>
+                <a href="https://go.hotmart.com/G104781339E?ap=e9f3" class="btn btn-alt">📚 ¡Quiero Mi Manual de 1000 Patrones!</a>
             </div>
 
         </div>
 
-        <!-- VÍA DE ESCAPE (Fricción Reducida) -->
         <div class="escape-link-container">
             <a href="#" class="escape-link">No gracias, por ahora solo quiero acceder a mis patrones base de $9.99.</a>
         </div>
 
-        <!-- Footer -->
         <footer>
             Garantía de Satisfacción. Pago 100% Seguro.
         </footer>
     </div>
 
-    <!-- Script del Contador Regresivo -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            // Configurar el tiempo en minutos (15 minutos)
             let timeInMinutes = 15;
             let timeInSeconds = timeInMinutes * 60;
             const timerDisplay = document.getElementById("timer");
@@ -400,11 +348,8 @@
             const interval = setInterval(function() {
                 let minutes = Math.floor(timeInSeconds / 60);
                 let seconds = timeInSeconds % 60;
-
-                // Formatear con ceros a la izquierda
                 let formattedMinutes = minutes < 10 ? "0" + minutes : minutes;
                 let formattedSeconds = seconds < 10 ? "0" + seconds : seconds;
-
                 timerDisplay.textContent = formattedMinutes + ":" + formattedSeconds;
 
                 if (timeInSeconds <= 0) {
