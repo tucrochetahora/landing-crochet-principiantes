@@ -9,7 +9,20 @@
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
         body { background-color: var(--primary-bg); color: var(--text-main); display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: 20px; }
         .squeeze-container { background: white; padding: 2.5rem; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.08); max-width: 600px; text-align: center; }
-        h1 { color: var(--trust-blue); font-size: 2.2rem; margin-bottom: 1rem; line-height: 1.2; font-weight: 800; }
+        h1 { color: var(--trust-blue); font-size: 2.2rem; margin-bottom: 1.5rem; line-height: 1.2; font-weight: 800; }
+        
+        /* ESTILO NUEVO PARA LA IMAGEN */
+        .hero-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
         p { margin-bottom: 1.8rem; font-size: 1.1rem; line-height: 1.5; color: #475569; }
         input { width: 100%; padding: 16px; margin-bottom: 15px; border: 1px solid #CBD5E1; border-radius: 8px; font-size: 1rem; outline: none; }
         input:focus { border-color: var(--trust-blue); }
@@ -22,7 +35,11 @@
 <body>
     <div class="squeeze-container">
         <div class="badge">REGALO EXCLUSIVO</div>
+        
         <h1>¿Quieres Tejer un Granny Square Perfecto y Sin Errores en Tiempo Récord?</h1>
+        
+        <img src="granny.jpg" alt="Granny Square Perfecto" class="hero-image">
+        
         <p>Descarga <strong>gratis</strong> mi patrón paso a paso (con el truco exacto para que los bordes nunca se tuerzan) y empieza a crear mantas o tops increíbles hoy mismo.</p>
         
         <form id="sib-form" method="POST" action="https://c3ce3d7e.sibforms.com/serve/MUIFAMHXASCOJ2m1u3s02EPUwz941akbyjN_YppIsL7U-Tw6H1I5FvdDMDJrwkyufMNz2euXRwGawqpNXvGGPTT3jzK7OnjcU9yEW1MGQW891v0oiUXUtoHTfJa4PeKJKczoIlD4N6irUzTuoqrvQtYOB2XMngOqvLXxMaXlszfQ-q4Kj2-tLebdAMOMRQBaFTi-IFgDjBZIDgWofA==">
