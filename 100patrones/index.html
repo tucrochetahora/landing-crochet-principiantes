@@ -270,5 +270,104 @@
         }
         window.onload = function () { var time = 863, display = document.querySelector('#timer'); startTimer(time, display); };
     </script>
+    <style>
+    /* Estilos del Pop-up */
+    .fomo-notification {
+        position: fixed;
+        bottom: 30px;
+        left: 20px;
+        background: #ffffff;
+        border-radius: 12px;
+        padding: 12px 18px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        z-index: 9998;
+        transform: translateX(-150%);
+        transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        max-width: 320px;
+        border: 1px solid #f1f5f9;
+        pointer-events: none; /* No estorba clics */
+    }
+    .fomo-notification.active { transform: translateX(0); }
+    .fomo-img {
+        width: 45px;
+        height: 45px;
+        background: #d1fae5;
+        color: #10b981;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        flex-shrink: 0;
+    }
+    .fomo-text { font-family: 'Inter', sans-serif; font-size: 0.85rem; color: #334155; line-height: 1.4; }
+    .fomo-text strong { color: #0f172a; display: block; font-weight: 700; }
+    .fomo-time { font-size: 0.75rem; color: #94a3b8; display: block; margin-top: 2px; }
+
+    @media (max-width: 600px) {
+        .fomo-notification { bottom: 120px; left: 10px; right: 10px; max-width: none; }
+    }
+</style>
+
+<div id="fomo-popup" class="fomo-notification">
+    <div class="fomo-img">✓</div>
+    <div class="fomo-text">
+        <strong id="fomo-name">Cargando...</strong>
+        acaba de descargar sus 100 patrones.
+        <span id="fomo-time" class="fomo-time">hace poco</span>
+    </div>
+</div>
+
+<script>
+    const fomoData = [
+        {n: "Maria", c: "Bogot&#225;, CO", t: "hace 2 min"},
+        {n: "Juan", c: "Medell&#237;n, CO", t: "hace 5 min"},
+        {n: "Elena", c: "Madrid, ES", t: "hace 3 min"},
+        {n: "Carlos", c: "CDMX, MX", t: "hace 8 min"},
+        {n: "Sofia", c: "Lima, PE", t: "hace 1 min"},
+        {n: "Diego", c: "Santiago, CL", t: "hace 12 min"},
+        {n: "Luc&#237;a", c: "Barcelona, ES", t: "hace 4 min"},
+        {n: "Javier", c: "Guadalajara, MX", t: "hace 6 min"},
+        {n: "Mariana", c: "Cali, CO", t: "hace 10 min"},
+        {n: "Ricardo", c: "Buenos Aires, AR", t: "hace 2 min"},
+        {n: "Valentina", c: "Valencia, ES", t: "hace 7 min"},
+        {n: "Alejandro", c: "Monterrey, MX", t: "hace 15 min"},
+        {n: "Gabriela", c: "Quito, EC", t: "hace 4 min"},
+        {n: "Luis", c: "Panam&#225;, PA", t: "hace 9 min"},
+        {n: "Camila", c: "San Jos&#233;, CR", t: "hace 11 min"},
+        {n: "Mateo", c: "Sevilla, ES", t: "hace 3 min"},
+        {n: "Isabella", c: "Montevideo, UY", t: "hace 14 min"},
+        {n: "Nicol&#225;s", c: "Asunci&#243;n, PY", t: "hace 6 min"},
+        {n: "Paola", c: "Antigua, GT", t: "hace 8 min"},
+        {n: "Andr&#233;s", c: "Santo Domingo, DO", t: "hace 5 min"}
+    ];
+
+    function showFomo() {
+        const popup = document.getElementById('fomo-popup');
+        const nameEl = document.getElementById('fomo-name');
+        const timeEl = document.getElementById('fomo-time');
+        const entry = fomoData[Math.floor(Math.random() * fomoData.length)];
+        
+        nameEl.innerHTML = entry.n + " de " + entry.c;
+        timeEl.innerHTML = entry.t;
+        
+        popup.classList.add('active');
+        
+        setTimeout(() => {
+            popup.classList.remove('active');
+            // Tiempo aleatorio para la siguiente venta (entre 15 y 30 segundos)
+            const nextTime = Math.floor(Math.random() * (30000 - 15000 + 1)) + 15000;
+            setTimeout(showFomo, nextTime);
+        }, 6000); // Se queda visible 6 segundos
+    }
+
+    // Iniciar sistema 6 segundos después de que cargue la página
+    window.addEventListener('load', () => {
+        setTimeout(showFomo, 6000);
+    });
+</script>
 </body>
 </html>
