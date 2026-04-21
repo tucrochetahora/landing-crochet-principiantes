@@ -5,492 +5,362 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aprende Crochet Desde Cero | @tucrochetahora</title>
     <style>
-        /* Variables de Color y Tipografía - Estilo Premium */
+        /* Diseño Rediseñado por Experto en Conversión */
         :root {
-            --primary-bg: #FAFAFA;
-            --hero-bg: linear-gradient(135deg, #F0FDF4 0%, #E0F2FE 100%);
+            --primary-bg: #FDFDFD;
+            --hero-bg: linear-gradient(180deg, #E0F2FE 0%, #FDFDFD 100%);
             --text-main: #334155;
             --text-dark: #0F172A;
-            --cta-color: #059669; /* Verde más confiable y profesional */
-            --cta-hover: #047857;
-            --headline-blue: #0F172A;
+            --cta-color: #10B981; 
+            --cta-hover: #059669;
+            --headline-blue: #1E3A8A;
             --headline-green: #059669;
             --accent-gold: #F59E0B;
-            --badge-orange: #F59E0B;
+            --badge-orange: #FB923C;
             --price-muted: #94A3B8;
-            --box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+            --box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
         }
 
         body {
             background-color: var(--primary-bg);
             color: var(--text-main);
-            line-height: 1.6;
+            line-height: 1.7;
             font-size: 16px;
+            -webkit-font-smoothing: antialiased;
         }
 
         .container {
-            width: 90%;
-            max-width: 800px;
+            width: 92%;
+            max-width: 750px;
             margin: 0 auto;
-            padding: 2.5rem 0;
+            padding: 3rem 0;
         }
 
         .text-center { text-align: center; }
         .highlight { color: var(--cta-color); font-weight: 800; }
 
-        /* Banners Superiores */
+        /* Banner de Urgencia - Dopamina por Escasez */
         #urgency-banner {
-            background-color: #FEF2F2;
-            color: #991B1B;
+            background-color: #B91C1C;
+            color: #FFFFFF;
             text-align: center;
-            padding: 10px;
-            font-weight: 700;
-            font-size: 0.95rem;
+            padding: 12px;
+            font-weight: 800;
+            font-size: 0.9rem;
             position: sticky;
             top: 0;
-            z-index: 100;
-            border-bottom: 2px solid #FECACA;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            z-index: 1000;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
-        /* Hero Section */
+        /* Hero Section - Enfoque en Producto */
         .hero-section {
             background: var(--hero-bg);
-            padding: 4rem 1rem 3rem;
-            border-bottom: 1px solid #E2E8F0;
-        }
-
-        .hero-container {
-            width: 90%;
-            max-width: 900px;
-            margin: 0 auto;
+            padding: 5rem 1rem 4rem;
+            text-align: center;
         }
 
         h1 {
             color: var(--headline-blue);
-            font-size: 2.4rem;
-            line-height: 1.2;
+            font-size: clamp(2rem, 5vw, 2.8rem);
+            line-height: 1.1;
             margin-bottom: 1.5rem;
             font-weight: 900;
-            letter-spacing: -0.5px;
+            letter-spacing: -1px;
         }
 
-        .hero-title-green { color: var(--headline-green); }
-
-        h2 {
-            color: var(--text-dark);
-            font-size: 1.8rem;
-            margin-top: 1rem;
-            margin-bottom: 1.5rem;
-            font-weight: 800;
-            line-height: 1.3;
+        .hero-title-green { 
+            background: linear-gradient(to right, #059669, #10B981);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        /* Precios */
+        /* Precios - Contraste Psicológico */
         .price-row {
-            margin: 1.5rem auto 2rem;
+            margin: 2rem auto;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-            background: rgba(255,255,255,0.6);
-            padding: 10px 20px;
-            border-radius: 50px;
+            gap: 12px;
+            background: white;
+            padding: 15px 25px;
+            border-radius: 100px;
             width: fit-content;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border: 1px solid #F1F5F9;
         }
 
         .price-original {
             text-decoration: line-through;
             color: var(--price-muted);
-            font-size: 1.2rem;
-            font-weight: 600;
+            font-size: 1.1rem;
         }
 
         .price-today {
-            color: var(--headline-green);
+            color: var(--text-dark);
             font-size: 1.8rem;
             font-weight: 900;
         }
 
         .price-savings {
-            background-color: var(--badge-orange);
-            color: #fff;
+            background-color: #FEF3C7;
+            color: #92400E;
             font-weight: 800;
-            font-size: 0.95rem;
+            font-size: 0.85rem;
             padding: 6px 14px;
-            border-radius: 20px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+            border-radius: 100px;
         }
 
-        /* Botones Mejorados */
+        /* Botón de Acción - El "Click" de Dopamina */
         .btn-cta {
             display: block;
             width: 100%;
-            max-width: 500px;
-            background-color: var(--cta-color);
+            max-width: 550px;
+            background: linear-gradient(180deg, #10B981 0%, #059669 100%);
             color: #ffffff;
             text-align: center;
-            padding: 20px 30px;
-            font-size: 1.25rem;
+            padding: 24px 35px;
+            font-size: 1.4rem;
             font-weight: 900;
             text-decoration: none;
-            border-radius: 50px;
-            margin: 10px auto;
-            box-shadow: 0 10px 20px rgba(5, 150, 105, 0.3);
-            border: 2px solid #047857;
+            border-radius: 16px;
+            margin: 25px auto;
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.4);
+            border: none;
+            border-bottom: 4px solid #047857;
             cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.2s ease;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
 
         .btn-cta:hover {
-            background-color: var(--cta-hover);
-            transform: translateY(-3px);
-            box-shadow: 0 15px 25px rgba(5, 150, 105, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 15px 35px rgba(16, 185, 129, 0.5);
+            filter: brightness(1.1);
         }
 
-        .secure-text {
-            font-size: 0.85rem;
-            color: #64748B;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 5px;
-            margin-bottom: 1.5rem;
-            font-weight: 500;
+        .btn-cta:active {
+            transform: translateY(2px);
+            border-bottom-width: 0;
         }
 
-        /* Cajas de Contenido Premium */
+        /* Secciones de Texto y Copywriting */
         .section-box {
             background: #ffffff;
-            padding: 2.5rem;
-            border-radius: 16px;
-            margin: 2rem 0;
+            padding: 3rem;
+            border-radius: 24px;
+            margin: 3rem 0;
             box-shadow: var(--box-shadow);
             border: 1px solid #F1F5F9;
         }
 
-        .guarantee-box {
-            background: #FFFBEB;
-            border: 2px dashed var(--accent-gold);
-            text-align: center;
-        }
-
-        /* Listas Estilo Copywriting (Checkmarks y Equis) */
-        .copy-list {
-            list-style: none;
-            margin-bottom: 1.5rem;
-        }
-        
         .copy-list li {
             position: relative;
-            padding-left: 35px;
-            margin-bottom: 1.2rem;
-            font-size: 1.1rem;
-            line-height: 1.5;
-            color: #475569;
+            padding-left: 45px;
+            margin-bottom: 1.5rem;
+            font-size: 1.15rem;
+            font-weight: 500;
         }
 
-        .copy-list.pain li::before {
-            content: '❌';
-            position: absolute;
-            left: 0;
-            top: 2px;
-            font-size: 1.2rem;
-        }
+        .copy-list.pain li::before { content: '✕'; position: absolute; left: 0; color: #EF4444; font-weight: 900; font-size: 1.4rem; }
+        .copy-list.check li::before { content: '✓'; position: absolute; left: 0; color: #10B981; font-weight: 900; font-size: 1.4rem; }
 
-        .copy-list.check li::before {
-            content: '✅';
-            position: absolute;
-            left: 0;
-            top: 2px;
-            font-size: 1.2rem;
-        }
-
-        /* Placeholder de Imagen por Dentro */
-        .inside-look-box {
-            background: #F8FAFC;
-            border: 2px solid #E2E8F0;
-            border-radius: 12px;
-            padding: 1.5rem;
-            text-align: center;
-            margin: 2rem 0;
-        }
-
-        .image-placeholder img {
-            width: 100%;
-            max-width: 600px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            margin-top: 1rem;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* Testimonios */
         .testimonial-card {
             background: #F8FAFC;
-            border-left: 4px solid var(--accent-gold);
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            border-radius: 0 12px 12px 0;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 20px;
+            border: 1px solid #E2E8F0;
         }
 
-        .stars { color: var(--accent-gold); font-size: 1.2rem; margin-bottom: 8px; }
-        .testimonial-text { font-style: italic; color: #334155; font-size: 1.05rem; }
-        .testimonial-author { font-weight: 700; margin-top: 10px; font-size: 0.95rem; color: #0F172A; }
+        /* Bloque de Imagen - Visualización de Valor */
+        .inside-look-box {
+            background: #F1F5F9;
+            border-radius: 24px;
+            padding: 3rem;
+            text-align: center;
+        }
 
-        .checkout-link { text-decoration: none; }
-
-        /* Resumen de Pedido */
+        /* Resumen de Pedido - Cierre de Venta */
         .order-summary-section {
-            background-color: #F1F5F9;
-            padding: 3rem 1rem;
-            margin: 2rem 0;
-            border-top: 1px solid #E2E8F0;
-            border-bottom: 1px solid #E2E8F0;
+            background-color: #F8FAFC;
+            padding: 4rem 1rem;
         }
 
         .order-summary-card {
             background: #ffffff;
-            border-radius: 16px;
-            padding: 2.5rem;
-            max-width: 500px;
+            border-radius: 30px;
+            padding: 3.5rem;
+            max-width: 550px;
             margin: 0 auto;
-            box-shadow: var(--box-shadow);
-            border: 2px solid #E2E8F0;
+            box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.15);
         }
-
-        .order-summary-card h2 { text-align: center; margin-top: 0; }
-
-        .order-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 1rem 0;
-            border-bottom: 1px dashed #CBD5E1;
-            font-size: 1.05rem;
-        }
-
-        .order-item strong { color: var(--headline-blue); }
-
-        .order-total-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 1.5rem;
-            font-size: 1.2rem;
-            font-weight: 800;
-        }
-
-        .order-total-price { text-decoration: line-through; color: #EF4444; }
 
         .big-price {
             display: flex;
             align-items: baseline;
             justify-content: center;
-            gap: 3px;
-            margin: 1rem 0;
+            margin: 1.5rem 0;
         }
 
-        .big-price .dollar-sign { font-size: 2.5rem; font-weight: 900; color: var(--headline-green); }
-        .big-price .amount { font-size: 5rem; font-weight: 900; color: var(--headline-green); line-height: 1; }
-        .big-price .cents-currency { font-size: 1.5rem; font-weight: 800; color: var(--headline-green); align-self: flex-end; margin-bottom: 0.7rem; }
+        .big-price .dollar-sign { font-size: 2.5rem; font-weight: 900; color: var(--text-dark); margin-right: 5px; }
+        .big-price .amount { font-size: 6rem; font-weight: 900; color: var(--text-dark); line-height: 0.8; letter-spacing: -4px; }
+        .big-price .cents-currency { font-size: 1.8rem; font-weight: 800; color: var(--text-dark); margin-left: 5px; }
 
-        @media (min-width: 768px) { h1 { font-size: 3rem; } }
-
-        /* Boton WhatsApp */
+        /* Botón WhatsApp Estilizado */
         .whatsapp-flotante {
             position: fixed;
-            width: 60px;
-            height: 60px;
-            bottom: 40px;
-            right: 40px;
-            background-color: #25d366;
-            color: #FFF;
-            border-radius: 50px;
-            text-align: center;
-            font-size: 30px;
-            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
-            z-index: 1000;
-            transition: all 0.3s ease;
+            width: 65px;
+            height: 65px;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+            z-index: 9999;
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
-        .whatsapp-flotante:hover { background-color: #128C7E; transform: scale(1.1); }
-        .whatsapp-icono { width: 35px; height: 35px; fill: white; }
+        .whatsapp-flotante:hover { transform: scale(1.15) rotate(10deg); }
+        .whatsapp-icono { width: 35px; fill: white; }
+
+        @media (max-width: 600px) {
+            .section-box { padding: 1.5rem; }
+            .big-price .amount { font-size: 5rem; }
+            h1 { font-size: 2.2rem; }
+        }
     </style>
 </head>
 <body>
 
     <div id="urgency-banner">
-        &#9888;&#65039; Oferta de lanzamiento y Bonos expiran en: <span id="timer">14:23</span>
+        ⚠️ Oferta y Bonos expiran en: <span id="timer">14:23</span>
     </div>
 
     <div class="hero-section">
-        <div class="hero-container text-center">
+        <div class="hero-container">
             <h1>&#191;Frustrada Porque Tus Tejidos Nunca Quedan Como En La Foto y <br><span class="hero-title-green">No Entiendes Los Patrones?</span></h1>
-            <p style="font-size: 1.25rem; color: #475569; font-weight: 500; margin-bottom: 1.5rem; max-width: 700px; margin-left: auto; margin-right: auto;">Descubre c&#243;mo dominar los puntos b&#225;sicos del crochet y tener 100 proyectos listos para tejer, 100% en espa&#241;ol, incluso si empiezas desde cero.</p>
+            <p style="font-size: 1.2rem; color: #64748B; margin-bottom: 2rem;">Domina los puntos b&#225;sicos del crochet y ten 100 proyectos listos para tejer, 100% en espa&#241;ol, desde cero absoluto.</p>
 
-            <img src="../mockup.png" alt="2 Libros Digitales de Crochet para Principiantes y 100 Patrones" style="width: 100%; max-width: 600px; height: auto; margin: 1rem auto; display: block; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.1));">
+            <img src="../mockup.png" alt="Pack Crochet" style="width: 100%; max-width: 550px; height: auto; margin: 0 auto; display: block; filter: drop-shadow(0 20px 30px rgba(0,0,0,0.15));">
 
             <div class="price-row">
-                <span class="price-original">~~$47.00 USD~~</span>
-                <span class="price-today">Hoy: $3.99 USD</span>
-                <span class="price-savings">Ahorras un 78%</span>
+                <span class="price-original">$47.00 USD</span>
+                <span class="price-today">$3.99 USD</span>
+                <span class="price-savings">78% OFF</span>
             </div>
 
             <a href="https://hotm.io/descuentopatro" class="checkout-link">
-                <button class="btn-cta">&#161;S&#205;, QUIERO APRENDER A TEJER AHORA!</button>
+                <button class="btn-cta">&#161;S&#205;, QUIERO EMPEZAR AHORA!</button>
             </a>
-            <div class="secure-text">&#128274; Pago 100% Seguro. Acceso Inmediato a tu correo.</div>
+            <div class="secure-text">🔒 Pago Encriptado • Acceso Inmediato</div>
         </div>
     </div>
 
     <div class="container">
-
         <section class="section-box">
-            <h2>&#191;Te resulta familiar alguna de estas situaciones?</h2>
+            <h2 style="margin-bottom: 2rem;">&#191;Te resulta familiar esto?</h2>
             <ul class="copy-list pain">
-                <li>Pasas horas buscando en Pinterest y solo encuentras patrones hermosos pero en <strong>ingl&#233;s, ruso o llenos de abreviaturas extra&#241;as</strong>.</li>
-                <li><strong>Tejes, te equivocas y destejes.</strong> Una y otra vez hasta que te duelen las manos y el hilo termina &#225;spero.</li>
-                <li>Ese amigurumi o top que se ve&#237;a perfecto en la foto, a ti te queda <strong>deforme, tenso o lleno de agujeros horribles</strong>.</li>
-                <li>Has sentido ese nudo en el est&#243;mago pensando: <em>"Definitivamente soy demasiado torpe, el crochet no es para m&#237;".</em></li>
+                <li>Horas perdidas buscando patrones en <strong>ingl&#233;s o ruso</strong> que no entiendes.</li>
+                <li><strong>Tejer y destejer</strong> hasta que te duelen las manos y da&#241;as el hilo.</li>
+                <li>Tus proyectos quedan <strong>deformes o con huecos</strong> que no deberían estar ahí.</li>
+                <li>Sentir que <em>"el crochet no es para m&#237;"</em> por culpa de explicaciones malas.</li>
             </ul>
 
-            <h3 style="color: var(--headline-blue); font-size: 1.4rem; margin-top: 2rem; margin-bottom: 1rem;">Pero d&#233;jame decirte la verdad:</h3>
+            <h3 style="color: var(--headline-blue); margin: 2.5rem 0 1rem;">La cruda realidad:</h3>
             <ul class="copy-list check">
                 <li><strong>El problema NUNCA fuiste t&#250;.</strong></li>
-                <li>Son esos "gur&#250;s" de YouTube que editan los videos r&#225;pido y se saltan los pasos cruciales.</li>
-                <li>Son los dise&#241;adores elitistas que escriben patrones incomprensibles.</li>
+                <li>Los tutoriales r&#225;pidos de YouTube ocultan los pasos clave.</li>
+                <li>Los patrones antiguos est&#225;n escritos en "jeroglíficos".</li>
             </ul>
-            <p class="highlight text-center" style="font-size: 1.3rem; margin-top: 1.5rem;">Nadie se hab&#237;a sentado a ense&#241;arte el por qu&#233; de cada punto en un idioma humano. Hasta hoy.</p>
         </section>
 
-        <section class="text-center" style="margin: 3rem 0;">
-            <h2>&#161;Hola! Somos @tucrochetahora &#128075;</h2>
-            <p style="font-size: 1.15rem; max-width: 700px; margin: 0 auto;">Nos obsesionamos con "descifrar el c&#243;digo". Compilamos todo lo que desear&#237;amos haber sabido al empezar y creamos los <strong>2 Libros Digitales para Principiantes</strong>. Vas a pasar de sentirte abrumada a leer cualquier patr&#243;n como si fuera tu idioma materno.</p>
+        <section class="text-center">
+            <h2 style="font-size: 2.2rem;">&#161;Hola! Somos @tucrochetahora 👋</h2>
+            <p style="font-size: 1.2rem; margin-top: 1rem;">Creamos un m&#233;todo para que leer cualquier patr&#243;n sea tan f&#225;cil como leer este texto. Sin estr&#233;s, solo relajaci&#243;n.</p>
         </section>
 
-        <section>
-            <h2>Mujeres como t&#250; ya est&#225;n tejiendo sin frustraci&#243;n:</h2>
+        <section style="margin-top: 4rem;">
+            <h2>Historias Reales:</h2>
             <div class="testimonial-card">
-                <div class="stars">&#11088;&#11088;&#11088;&#11088;&#11088;</div>
-                <p class="testimonial-text">"Llevaba meses intentando hacer un simple mu&#241;eco y siempre me quedaba con huecos. Con este libro por fin entend&#237; la tensi&#243;n del hilo. &#161;Ayer termin&#233; mi primer proyecto perfecto y casi lloro de la emoci&#243;n!"</p>
-                <p class="testimonial-author">&#8212; Marta G., 34 a&#241;os. (Empez&#243; desde cero)</p>
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">"Por fin entend&#237; la tensi&#243;n del hilo. &#161;Ayer termin&#233; mi primer proyecto perfecto!"</p>
+                <p class="testimonial-author">— Marta G., 34 a&#241;os.</p>
             </div>
             <div class="testimonial-card">
-                <div class="stars">&#11088;&#11088;&#11088;&#11088;&#11088;</div>
-                <p class="testimonial-text">"Compraba patrones car&#237;simos en ingl&#233;s y me quedaba a la mitad por no entender las abreviaturas. Gracias a los 100 patrones en espa&#241;ol, ahora tejo relajada viendo Netflix."</p>
-                <p class="testimonial-author">&#8212; Silvia R., 42 a&#241;os.</p>
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">"Gracias a los 100 patrones, ahora tejo relajada viendo Netflix. Es mi mejor inversi&#243;n."</p>
+                <p class="testimonial-author">— Silvia R., 42 a&#241;os.</p>
             </div>
         </section>
 
-        <section class="section-box">
-            <h2 class="text-center">Dentro de tus libros descubrir&#225;s:</h2>
-            <ul class="copy-list check" style="margin-top: 1.5rem;">
-                <li><strong>El "Truco del Traductor":</strong> C&#243;mo leer cualquier gr&#225;fico de un vistazo, sin sentir que descifras jeroglí&#65039;ficos.</li>
-                <li><strong>La "Regla de Oro" de la Tensi&#243;n:</strong> El ajuste milim&#233;trico para evitar bordes irregulares o tejidos encogidos.</li>
-                <li><strong>El Movimiento Invisible:</strong> El secreto que transforma la lana m&#225;s barata en un tejido de aspecto profesional.</li>
+        <section class="section-box" style="background: var(--headline-blue); color: white;">
+            <h2 style="color: white; text-align: center;">Lo que obtienes hoy:</h2>
+            <ul class="copy-list check" style="margin-top: 2rem;">
+                <li style="color: white;"><strong>El "Truco del Traductor":</strong> Lee cualquier gr&#225;fico de un vistazo.</li>
+                <li style="color: white;"><strong>La "Regla de Oro":</strong> Olv&#237;date de los bordes irregulares para siempre.</li>
+                <li style="color: white;"><strong>El Movimiento Invisible:</strong> Acabados profesionales con lanas baratas.</li>
             </ul>
         </section>
 
         <section class="inside-look-box">
-            <h2>&#127873; B&#211;VEDA SECRETA: Tu Biblioteca de 100 Patrones</h2>
-            <p>Amigurumis, decoraci&#243;n, prendas... tendr&#225;s proyectos modernos listos para tu aguja durante todo el a&#241;o, <strong>100% en espa&#241;ol</strong>.</p>
-            
-            <h3 style="margin-top: 1.5rem; color: var(--headline-blue);">Mira c&#243;mo se ve tu biblioteca por dentro:</h3>
-            
+            <h2>🎁 B&#211;VEDA SECRETA: 100 Patrones</h2>
+            <p style="margin-bottom: 2rem;">Tu biblioteca privada 100% en espa&#241;ol.</p>
             <div class="image-placeholder">
-                <img src="TU_FOTO_DE_LOS_ARCHIVOS_AQUI.png" alt="Archivos de patrones por dentro">
+                <img src="TU_FOTO_DE_LOS_ARCHIVOS_AQUI.png" alt="Archivos">
             </div>
-            </section>
+        </section>
 
         <section class="section-box guarantee-box">
-            <h2>&#128737;&#65039; Garant&#237;a Blindada de 7 D&#237;as</h2>
-            <p style="font-size: 1.1rem; margin-bottom: 1rem;"><strong>"Tejes o Te Devuelvo Tu Dinero"</strong></p>
-            <p>Descarga el material. Si sientes que sigues sin entender los puntos, env&#237;anos un correo. Te devolveremos hasta el &#250;ltimo centavo de tus <strong>$3.99</strong> sin hacer preguntas, y te quedas con los libros. T&#250; no arriesgas nada.</p>
+            <h2 style="color: #92400E;">🛡️ Garant&#237;a de Satisfacci&#243;n</h2>
+            <p><strong>"Tejes o te devolvemos tu dinero"</strong></p>
+            <p style="margin-top: 1rem;">Prueba todo por 7 d&#237;as. Si no aprendes, te devolvemos tus <strong>$3.99</strong> y te quedas con el material. Riesgo Cero.</p>
         </section>
-
-        <section style="margin-bottom: 2rem;">
-            <h2>Tienes 3 opciones hoy:</h2>
-            <ul class="copy-list" style="margin-top: 1.5rem;">
-                <li><span style="position: absolute; left: 0;">&#128308;</span> <strong>Opci&#243;n 1:</strong> Seguir guardando lanas en el caj&#243;n y sintiendo que el crochet "no se te da".</li>
-                <li><span style="position: absolute; left: 0;">&#128993;</span> <strong>Opci&#243;n 2:</strong> Perder horas en videos r&#225;pidos, frustr&#225;ndote y desperdiciando material caro.</li>
-                <li><span style="position: absolute; left: 0;">&#128994;</span> <strong>Opci&#243;n 3: Invertir solo $3.99 hoy.</strong> Empezar a tejer proyectos impecables esta misma noche con un m&#233;todo probado.</li>
-            </ul>
-        </section>
-
     </div>
 
     <div class="order-summary-section">
-        <div class="order-summary-card">
-            <h2>Resumen de tu Pedido Seguro</h2>
-
-            <img src="../mockup.png" alt="Paquete Completo" style="width: 100%; max-width: 350px; height: auto; margin: 0 auto 1.5rem; display: block;">
-
+        <div class="order-summary-card text-center">
+            <h2 style="margin-bottom: 2rem;">Resumen de tu Pedido</h2>
+            <img src="../mockup.png" alt="Final" style="width: 80%; margin-bottom: 2rem;">
+            
             <div class="order-item">
-                <span>&#128214; 2 Libros Digitales para Principiantes</span>
-                <span style="color: #94A3B8;">($17.00)</span>
+                <span>📚 2 Libros Digitales</span>
+                <strong>Incluido</strong>
             </div>
             <div class="order-item">
-                <span>&#127873; <strong>Bono: 100 Patrones en Espa&#241;ol</strong></span>
-                <span style="color: #94A3B8;">($30.00)</span>
+                <span>🎁 Bono: 100 Patrones</span>
+                <strong>GRATIS</strong>
             </div>
 
-            <div class="order-total-row">
-                <span>Valor Real:</span>
-                <span class="order-total-price">~~$47.00~~</span>
+            <div class="big-price">
+                <span class="dollar-sign">$</span>
+                <span class="amount">3</span>
+                <span class="cents-currency">.99 USD</span>
             </div>
-
-            <div class="text-center" style="margin-top: 2rem;">
-                <p style="font-size: 1.2rem; font-weight: 700; text-transform: uppercase;">Ll&#233;vatelo TODO hoy por:</p>
-                <div class="big-price">
-                    <span class="dollar-sign">$</span>
-                    <span class="amount">3</span>
-                    <span class="cents-currency">.99 USD</span>
-                </div>
-                
-                <a href="https://hotm.io/descuentopatro" class="checkout-link">
-                    <button class="btn-cta">&#161;S&#205;, QUIERO TODO ESTO POR $3.99!</button>
-                </a>
-                <div class="secure-text" style="margin-top: 15px;">&#128274; Pago 100% Seguro cifrado a 256-bits.</div>
-            </div>
+            
+            <a href="https://hotm.io/descuentopatro" class="checkout-link">
+                <button class="btn-cta">&#161;QUIERO TODO POR $3.99!</button>
+            </a>
+            <p style="font-size: 0.8rem; color: #94A3B8;">Acceso inmediato vía email después del pago.</p>
         </div>
     </div>
 
-    <div class="container">
-        <section>
-            <h2 class="text-center">Preguntas Frecuentes</h2>
-            <div class="section-box" style="margin-top: 1.5rem; padding: 2rem;">
-                <h4 style="font-size: 1.1rem; color: var(--headline-blue); margin-bottom: 5px;">&#191;Necesito lanas caras para empezar?</h4>
-                <p style="margin-bottom: 1.5rem;">&#161;Para nada! Te ense&#241;amos qu&#233; tipo de hilo econ&#243;mico es el mejor para practicar con los materiales m&#225;s b&#225;sicos de cualquier mercer&#237;a.</p>
+    <footer class="text-center" style="padding: 4rem 0; color: #94A3B8;">
+        <p>&#169; 2026 @tucrochetahora. Todos los derechos reservados.</p>
+    </footer>
 
-                <h4 style="font-size: 1.1rem; color: var(--headline-blue); margin-bottom: 5px;">&#191;Este m&#233;todo sirve si soy zurda?</h4>
-                <p style="margin-bottom: 1.5rem;">&#161;Absolutamente! Las bases de lectura y tensi&#243;n se aplican igual; solo espejas el movimiento. Tu tejido quedar&#225; hermoso.</p>
-
-                <h4 style="font-size: 1.1rem; color: var(--headline-blue); margin-bottom: 5px;">&#191;C&#243;mo recibo los libros?</h4>
-                <p>El acceso es inmediato. Al confirmar tu pago de $3.99, recibes un correo con los enlaces para descargar todo en tu celular, tablet o PC en menos de 2 minutos.</p>
-            </div>
-        </section>
-
-        <footer class="text-center" style="margin-top: 2rem; color: #94A3B8; font-size: 0.85rem; padding-bottom: 3rem;">
-            <p>&#169; 2026 @tucrochetahora. Todos los derechos reservados.</p>
-        </footer>
-    </div>
-
-    <a href="https://wa.me/573228482850?text=hola%20Tu%20crochet%20ahora%20estoy%20interesada%20en%20los%20patrones" class="whatsapp-flotante" target="_blank" rel="noopener noreferrer">
+    <a href="https://wa.me/573228482850?text=hola%20estoy%20interesada%20en%20los%20patrones" class="whatsapp-flotante" target="_blank">
         <svg class="whatsapp-icono" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-3.1-5.3-1-8.5 1.7-11.3 2.5-2.5 5.5-6.5 8.3-9.7 2.7-3.2 3.7-5.6 5.5-9.3 1.9-3.7.9-7-4.6-12.5-5.6-5.6-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
     </a>
 
@@ -507,8 +377,7 @@
             }, 1000);
         }
         window.onload = function () {
-            var time = 863,
-                display = document.querySelector('#timer');
+            var time = 863, display = document.querySelector('#timer');
             startTimer(time, display);
         };
     </script>
