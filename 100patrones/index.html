@@ -100,6 +100,68 @@
             h1 { font-size: 2.2rem; }
         }
     </style>
+
+    <style>
+        .scarcity-container {
+            width: 100%;
+            max-width: 580px;
+            margin: 15px auto 5px;
+            text-align: left;
+        }
+        .scarcity-text {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            font-weight: 800;
+            color: #B91C1C;
+            margin-bottom: 8px;
+        }
+        .scarcity-text span.pulse-text {
+            animation: pulse-opacity 1.5s infinite;
+        }
+        .scarcity-bar-bg {
+            width: 100%;
+            height: 14px;
+            background-color: #FEE2E2;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .scarcity-bar-fill {
+            width: 85%;
+            height: 100%;
+            background: linear-gradient(90deg, #EF4444 0%, #B91C1C 100%);
+            border-radius: 10px;
+            position: relative;
+        }
+        .scarcity-bar-fill::after {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background-image: linear-gradient(
+                -45deg,
+                rgba(255,255,255,0.2) 25%,
+                transparent 25%,
+                transparent 50%,
+                rgba(255,255,255,0.2) 50%,
+                rgba(255,255,255,0.2) 75%,
+                transparent 75%,
+                transparent
+            );
+            background-size: 20px 20px;
+            animation: move-stripes 1s linear infinite;
+            border-radius: 10px;
+        }
+        @keyframes move-stripes {
+            0% { background-position: 0 0; }
+            100% { background-position: 20px 0; }
+        }
+        @keyframes pulse-opacity {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+    </style>
 </head>
 <body>
 
@@ -120,6 +182,17 @@
             </div>
             
             <a href="https://hotm.io/descuentopatro" class="btn-cta">&#161;S&#205;, QUIERO APRENDER AHORA!</a>
+            
+            <div class="scarcity-container">
+                <div class="scarcity-text">
+                    <span class="pulse-text">🔥 Alto volumen de descargas</span>
+                    <span>Quedan 7 cupos</span>
+                </div>
+                <div class="scarcity-bar-bg">
+                    <div class="scarcity-bar-fill"></div>
+                </div>
+            </div>
+
             <p style="font-size: 0.9rem; color: #64748B;">🔒 Pago 100% Seguro cifrado a 256-bits.</p>
         </div>
     </div>
@@ -224,7 +297,18 @@
                 </div>
                 
                 <a href="https://hotm.io/descuentopatro" class="btn-cta">&#161;COMPLETAR MI PEDIDO AHORA!</a>
-                <p style="font-size: 0.85rem; color: #64748B;">🔒 Acceso Inmediato tras la confirmaci&#243;n.</p>
+                
+                <div class="scarcity-container">
+                    <div class="scarcity-text">
+                        <span class="pulse-text">🔥 Alto volumen de descargas</span>
+                        <span>Quedan 7 cupos</span>
+                    </div>
+                    <div class="scarcity-bar-bg">
+                        <div class="scarcity-bar-fill"></div>
+                    </div>
+                </div>
+
+                <p style="font-size: 0.85rem; color: #64748B; margin-top: 10px;">🔒 Acceso Inmediato tras la confirmaci&#243;n.</p>
             </div>
         </div>
     </div>
@@ -247,6 +331,12 @@
                 <h4><span>🤔</span> "¿Cómo y cuándo recibo los libros?"</h4>
                 <p>El acceso es inmediato. Apenas confirmes tu pago de <strong>$3.99</strong>, recibirás un correo seguro con los enlaces de descarga directa.</p>
             </div>
+
+            <div style="text-align: center; margin-top: 3.5rem;">
+                <a href="https://hotm.io/descuentopatro" class="btn-cta">&#161;S&#205;, QUIERO APRENDER AHORA!</a>
+                <p style="font-size: 0.9rem; color: #64748B; margin-top: 10px;">🔒 Pago 100% Seguro cifrado a 256-bits.</p>
+            </div>
+            
         </section>
     </div>
 
