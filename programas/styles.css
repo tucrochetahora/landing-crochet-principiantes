@@ -34,7 +34,7 @@ body {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-image: url('https://images.unsplash.com/photo-1628154564883-9b93226dbdd3?q=80&w=2070&auto=format&fit=crop'); /* Imagen de crochet/lanas */
+    background-image: url('fondo-premium.webp'); /* Mi imagen de fondo premium */
     background-size: cover;
     background-position: center;
     z-index: -2;
@@ -47,10 +47,10 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    /* Gradiente más suave que deja ver la textura del fondo */
-    background: linear-gradient(to bottom, rgba(10, 17, 40, 0.5) 0%, rgba(10, 17, 40, 0.85) 100%);
-    backdrop-filter: blur(4px); /* Menos desenfoque */
-    -webkit-backdrop-filter: blur(4px);
+    /* Gradiente y filtros para dar una lectura perfecta al texto superior */
+    background: linear-gradient(to bottom, rgba(10, 17, 40, 0.4) 0%, rgba(10, 17, 40, 0.8) 100%);
+    backdrop-filter: blur(5px) brightness(0.55); 
+    -webkit-backdrop-filter: blur(5px) brightness(0.55);
     z-index: -1;
 }
 
