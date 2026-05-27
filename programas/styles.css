@@ -1,631 +1,320 @@
 :root {
-
-    --bg-dark: #0f111a;
-
+    --bg-dark: #0a1128; /* Azul noche profundo, mucho más cálido que el negro */
     --text-main: #ffffff;
-
-    --text-muted: #a0a5b5;
-
-    --accent-color: #ff3399; /* Un fucsia más intenso y premium */
-
+    --text-muted: #e2e8f0;
+    --accent-color: #ff3399; /* Fucsia vibrante */
     --accent-hover: #ff66b2;
-
-    --glass-bg: rgba(30, 33, 43, 0.6);
-
-    --glass-border: rgba(255, 255, 255, 0.08);
-
+    --glass-bg: rgba(16, 30, 60, 0.55); /* Cristal con tinte azulado, más transparente */
+    --glass-border: rgba(255, 255, 255, 0.15);
     --border-radius-lg: 24px;
-
     --border-radius-sm: 12px;
-
     --transition: 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-
 }
-
-
 
 * {
-
     box-sizing: border-box;
-
     margin: 0;
-
     padding: 0;
-
 }
-
-
 
 body {
-
     font-family: 'Outfit', sans-serif;
-
     color: var(--text-main);
-
     background-color: var(--bg-dark);
-
     min-height: 100vh;
-
     display: flex;
-
     justify-content: center;
-
     overflow-x: hidden;
-
 }
 
-
-
-/* Fondo con imagen y overlay oscuro (Reemplazar URL luego) */
-
+/* Fondo de lanas con un overlay más suave */
 .bg-layer {
-
     position: fixed;
-
     top: 0;
-
     left: 0;
-
     width: 100vw;
-
     height: 100vh;
-
-    background-image: url('https://images.unsplash.com/photo-1606722590583-6951b5ea92ad?q=80&w=2070&auto=format&fit=crop'); /* Imagen temporal de crochet */
-
+    background-image: url('https://images.unsplash.com/photo-1628154564883-9b93226dbdd3?q=80&w=2070&auto=format&fit=crop'); /* Imagen de crochet/lanas */
     background-size: cover;
-
     background-position: center;
-
     z-index: -2;
-
 }
-
-
 
 .bg-layer::after {
-
     content: '';
-
     position: absolute;
-
     top: 0;
-
     left: 0;
-
     width: 100%;
-
     height: 100%;
-
-    background: linear-gradient(to bottom, rgba(15, 17, 26, 0.85) 0%, rgba(15, 17, 26, 0.95) 100%);
-
-    backdrop-filter: blur(8px);
-
-    -webkit-backdrop-filter: blur(8px);
-
+    /* Gradiente más suave que deja ver la textura del fondo */
+    background: linear-gradient(to bottom, rgba(10, 17, 40, 0.5) 0%, rgba(10, 17, 40, 0.85) 100%);
+    backdrop-filter: blur(4px); /* Menos desenfoque */
+    -webkit-backdrop-filter: blur(4px);
     z-index: -1;
-
 }
-
-
 
 /* Contenedor tipo móvil */
-
 .main-container {
-
     width: 100%;
-
     max-width: 680px;
-
     padding: 40px 20px;
-
     display: flex;
-
     flex-direction: column;
-
     align-items: center;
-
 }
-
-
 
 /* Cabecera del perfil */
-
 .profile-header {
-
     text-align: center;
-
     margin-bottom: 30px;
-
     width: 100%;
-
 }
-
-
 
 .profile-img-container {
-
     width: 110px;
-
     height: 110px;
-
     margin: 0 auto 15px;
-
     border-radius: 50%;
-
     padding: 4px;
-
     background: linear-gradient(45deg, var(--accent-color), #ffcc00);
-
+    box-shadow: 0 4px 15px rgba(255, 51, 153, 0.3);
 }
-
-
 
 .profile-img {
-
     width: 100%;
-
     height: 100%;
-
     object-fit: cover;
-
     border-radius: 50%;
-
     border: 3px solid var(--bg-dark);
-
 }
-
-
 
 .brand-title {
-
     font-size: 2.2rem;
-
     font-weight: 900;
-
     letter-spacing: -0.5px;
-
     margin-bottom: 8px;
-
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
 }
-
-
 
 .brand-bio {
-
     font-size: 1rem;
-
     color: var(--text-muted);
-
     line-height: 1.5;
-
     margin-bottom: 20px;
-
     font-weight: 300;
-
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
 }
-
-
 
 .social-icons {
-
     display: flex;
-
     justify-content: center;
-
     gap: 15px;
-
 }
-
-
 
 .social-link {
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
     width: 45px;
-
     height: 45px;
-
     border-radius: 50%;
-
     background-color: var(--glass-bg);
-
     color: var(--text-main);
-
     text-decoration: none;
-
     font-size: 1.2rem;
-
     border: 1px solid var(--glass-border);
-
     transition: var(--transition);
-
 }
-
-
 
 .social-link:hover {
-
     background-color: var(--accent-color);
-
     transform: translateY(-3px);
-
     border-color: var(--accent-color);
-
 }
-
-
 
 /* Navegación */
-
 .nav-tabs {
-
     display: flex;
-
     background-color: var(--glass-bg);
-
     padding: 6px;
-
     border-radius: 100px;
-
     margin-bottom: 30px;
-
     width: 100%;
-
     border: 1px solid var(--glass-border);
-
 }
-
-
 
 .nav-btn {
-
     flex: 1;
-
     background: transparent;
-
     border: none;
-
-    color: var(--text-muted);
-
+    color: #fff;
     padding: 12px 0;
-
     border-radius: 100px;
-
     font-family: 'Outfit', sans-serif;
-
     font-weight: 700;
-
     font-size: 0.9rem;
-
     letter-spacing: 0.5px;
-
     cursor: pointer;
-
     transition: var(--transition);
-
 }
-
-
 
 .nav-btn.active {
-
     background-color: var(--accent-color);
-
     color: #fff;
-
     box-shadow: 0 4px 15px rgba(255, 51, 153, 0.4);
-
 }
-
-
 
 /* Contenido Principal */
-
 .content-area {
-
     width: 100%;
-
 }
-
-
 
 .content-section {
-
     display: none;
-
     animation: fadeUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-
 }
-
-
 
 .content-section.active {
-
     display: block;
-
 }
-
-
 
 @keyframes fadeUp {
-
     from { opacity: 0; transform: translateY(20px); }
-
     to { opacity: 1; transform: translateY(0); }
-
 }
-
-
 
 /* Banner Informativo */
-
 .info-banner {
-
-    background: linear-gradient(135deg, rgba(255, 51, 153, 0.2) 0%, rgba(255, 204, 0, 0.1) 100%);
-
-    border: 1px solid rgba(255, 51, 153, 0.3);
-
+    background: linear-gradient(135deg, rgba(255, 51, 153, 0.25) 0%, rgba(255, 204, 0, 0.15) 100%);
+    border: 1px solid rgba(255, 51, 153, 0.4);
     padding: 15px 20px;
-
     border-radius: var(--border-radius-sm);
-
     margin-bottom: 25px;
-
     text-align: center;
-
     font-size: 0.95rem;
-
     font-weight: 300;
-
     line-height: 1.5;
-
 }
-
-
 
 /* Tarjetas de Links / Productos */
-
 .links-container {
-
     display: flex;
-
     flex-direction: column;
-
     gap: 16px;
-
 }
-
-
 
 .link-card {
-
     display: block;
-
     text-decoration: none;
-
     background-color: var(--glass-bg);
-
     border: 1px solid var(--glass-border);
-
     border-radius: var(--border-radius-lg);
-
     overflow: hidden;
-
     transition: var(--transition);
-
     position: relative;
-
 }
-
-
 
 .link-card:hover {
-
     transform: scale(1.02) translateY(-4px);
-
     border-color: var(--accent-color);
-
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 51, 153, 0.2);
-
-    background-color: rgba(40, 44, 56, 0.8);
-
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 0 0 20px rgba(255, 51, 153, 0.3);
+    background-color: rgba(26, 40, 75, 0.8);
 }
-
-
 
 /* Etiquetas flotantes en las tarjetas */
-
 .badge, .badge-alt {
-
     position: absolute;
-
     top: 12px;
-
     left: 12px;
-
     padding: 4px 10px;
-
     border-radius: 6px;
-
     font-size: 0.75rem;
-
     font-weight: 900;
-
     letter-spacing: 0.5px;
-
     z-index: 2;
-
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-
 }
-
-
 
 .badge {
-
     background-color: #ff3399;
-
     color: white;
-
 }
-
-
 
 .badge-alt {
-
     background-color: #ffcc00;
-
     color: #1a1a1a;
-
 }
-
-
 
 .card-img {
-
     width: 100%;
-
     height: 180px;
-
     object-fit: cover;
-
     border-bottom: 1px solid var(--glass-border);
-
 }
-
-
 
 .card-content {
-
     padding: 20px;
-
 }
-
-
 
 .link-card h3 {
-
     color: var(--text-main);
-
     font-size: 1.25rem;
-
     font-weight: 700;
-
     margin-bottom: 8px;
-
 }
-
-
 
 .link-card p {
-
     color: var(--text-muted);
-
     font-size: 0.9rem;
-
     margin-bottom: 20px;
-
     font-weight: 300;
-
     line-height: 1.4;
-
 }
-
-
 
 /* Botón de acción dentro de la tarjeta */
-
 .action-btn {
-
     display: inline-block;
-
     width: 100%;
-
-    background-color: rgba(255, 255, 255, 0.05);
-
-    color: var(--accent-hover);
-
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffb3d9;
     text-align: center;
-
     padding: 12px;
-
     border-radius: var(--border-radius-sm);
-
     font-weight: 700;
-
     font-size: 0.95rem;
-
     transition: var(--transition);
-
-    border: 1px solid rgba(255, 51, 153, 0.2);
-
+    border: 1px solid rgba(255, 51, 153, 0.3);
 }
-
-
 
 .link-card:hover .action-btn {
-
     background-color: var(--accent-color);
-
     color: white;
-
 }
-
-
 
 /* Animación de flotación ultra suave */
-
 .moving-card {
-
     animation: gentleFloat 6s ease-in-out infinite;
-
 }
-
-
 
 .moving-card:nth-child(1) { animation-delay: 0s; }
-
 .moving-card:nth-child(2) { animation-delay: 2s; }
-
 .moving-card:nth-child(3) { animation-delay: 4s; }
 
-
-
 .link-card:hover.moving-card {
-
     animation-play-state: paused;
-
 }
-
-
 
 @keyframes gentleFloat {
-
     0% { transform: translateY(0); }
-
     50% { transform: translateY(-6px); }
-
     100% { transform: translateY(0); }
-
 }
 
-
-
 footer {
-
     margin-top: 40px;
-
     text-align: center;
-
     font-size: 0.85rem;
-
     color: var(--text-muted);
-
     font-weight: 300;
-
 }
